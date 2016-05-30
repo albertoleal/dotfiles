@@ -1,0 +1,41 @@
+#!/bin/bash
+
+set -e
+
+success () {
+  printf "\r\033[2K  [ \033[00;32mOK\033[0m ] $1\n"
+}
+
+fail () {
+  printf "\r\033[2K  [\033[0;31mFAIL\033[0m] $1\n"
+  echo ''
+  exit
+}
+
+# SHOW TIME!
+
+## Linking symlink files
+link_file () {
+  ln -s  $1 $2
+  success "Liked $1 to $2"
+}
+
+for file in $(find `pwd` -name "*.symlink")
+do
+  destination="$HOME/.`basename \"${file%.*}\"`"
+
+  # Create a backup if a file exists
+  if [[  -f $destination ]] || [[ -L $destination ]]
+  then
+    mv $destination "${destination}.backup"
+  fi
+
+  # Move file
+  link_file $file $destination
+done
+
+## Installing things
+for file in $(find `pwd` -maxdepth 3 -name "install")
+do
+  echo $file
+done

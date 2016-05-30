@@ -1,0 +1,27 @@
+#!/bin/sh
+
+# Only for OS X.
+if [[ "Darwin" -ne $(uname) ]]
+then
+  echo "Skipping Homebrew step because it's now OS X."
+  exit 0
+fi
+
+# Check if Homebrew is already installed.
+if test  ! $(which brew)
+then
+  echo "Downloading homebrew..."
+  $(which ruby) -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" > /tmp/homebrew.log
+else
+  echo "Homebrew already installed!"
+fi
+
+echo "Installing a bunch of libraries..."
+
+brew install ack pcre  tree asciinema go universal-ctags autoconf htop libtool \
+pstree unixodbc automake irssi libxml2 qt vim bazaar jpeg libyaml watch \
+docker jq lua readline wget mercurial reattach-to-user-namespace fasd mysql\
+redis the_silver_searcher git-duet tig openssl tmux
+
+echo "Phew! All your libraries have been installed successfully."
+exit 0

@@ -1,0 +1,24 @@
+[user]
+    name = Alberto Leal
+    email = albertonb@gmail.com
+
+[core]
+    editor = "vim"
+
+[push]
+    default = matching
+
+[alias]
+    co = checkout
+    ci = commit --verbose
+    st = status
+    br = branch
+    lola = log --graph --decorate --oneline --all
+    dci = duet-commit --verbose
+    dca = duet-commit --amend --reset-author --verbose
+
+[color]
+    branch = auto
+    diff = auto
+    interactive = auto
+    status = auto

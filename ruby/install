@@ -1,0 +1,14 @@
+#!/bin/bash
+
+# Check RVM isn't already installed.
+if test ! $(which rvm)
+then
+  echo "Downloading and installing rvm.."
+  \curl -sSL https://get.rvm.io | bash -s stable --ruby
+  echo "RVM installed!"
+else
+  echo "RVM already installed!"
+fi
+
+
+exit 0 
