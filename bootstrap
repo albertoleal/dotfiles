@@ -37,5 +37,7 @@ done
 ## Installing things
 for file in $(find `pwd` -maxdepth 3 -name "install")
 do
-  echo $file
+  sh -c $file
 done
+
+## Add functions to PATH

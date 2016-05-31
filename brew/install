@@ -18,9 +18,9 @@ fi
 
 echo "Installing a bunch of libraries..."
 
-brew install ack pcre  tree asciinema go universal-ctags autoconf htop libtool \
+brew install ack pcre  tree asciinema go autoconf htop libtool \
 pstree unixodbc automake irssi libxml2 qt vim bazaar jpeg libyaml watch \
-docker jq lua readline wget mercurial reattach-to-user-namespace fasd mysql\
+docker jq lua readline wget mercurial reattach-to-user-namespace fasd mysql \
 redis the_silver_searcher git-duet tig openssl tmux
 
 echo "Phew! All your libraries have been installed successfully."
