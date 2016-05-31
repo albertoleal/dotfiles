@@ -10,7 +10,7 @@
 
 [alias]
     co = checkout
-    ci = commit --verbose
+    ci = commit -S --verbose
     st = status
     br = branch
     lola = log --graph --decorate --oneline --all
