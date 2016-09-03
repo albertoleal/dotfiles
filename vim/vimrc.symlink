@@ -69,9 +69,3 @@ runtime! lib/functions.vim
 runtime! lib/autocommands.vim
 
 silent! source ~/.vimrc.local
-
-" Stop using the arrows
-map <Up> :echom "No arrows motherfucker!"
-map <Down> :echom "No arrows motherfucker!"
-map <Left> :echom "No arrows motherfucker!"
-map <Right> :echom "No arrows motherfucker!"
