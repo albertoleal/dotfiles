@@ -12,32 +12,37 @@ fail () {
   exit
 }
 
-# SHOW TIME!
+update_symlinks() {
+  for file in $(find `pwd` -name "*.symlink")
+  do
+    destination="$HOME/.`basename \"${file%.*}\"`"
 
-## Linking symlink files
-link_file () {
-  ln -s  $1 $2
-  success "Liked $1 to $2"
+    # Create a backup if a file exists
+    if [[  -f $destination ]] || [[ -L $destination ]]
+    then
+      mv $destination "${destination}.backup"
+    fi
+
+    # Move file
+    ln -s  $1 $2
+    success "Liked $1 to $2"
+  done
 }
 
-for file in $(find `pwd` -name "*.symlink")
-do
-  destination="$HOME/.`basename \"${file%.*}\"`"
+install_scripts() {
+  for file in $(find `pwd` -maxdepth 3 -name "install")
+  do
+    sh -c $file
+  done
+}
 
-  # Create a backup if a file exists
-  if [[  -f $destination ]] || [[ -L $destination ]]
-  then
-    mv $destination "${destination}.backup"
-  fi
+update_functions() {
+  for file in $(ls `pwd`/functions)
+  do
+    ln -s /usr/local/bin $file
+  done
+}
 
-  # Move file
-  link_file $file $destination
-done
-
-## Installing things
-for file in $(find `pwd` -maxdepth 3 -name "install")
-do
-  sh -c $file
-done
-
-## Add functions to PATH
+update_symlinks
+install_scripts
+update_functions
