@@ -1,0 +1,64 @@
+#!/bin/bash
+
+REPOSITORIES=(
+  "ppa:aacebedo/fasd"
+  "ppa:nviennot/tmate"
+)
+
+PACKAGES=(
+  "ack-grep"
+  "coreutils"
+  "fasd"
+  "gcc"
+  "git"
+  "git-extras"
+  "jq"
+  "make"
+  "silversearcher-ag"
+  "tig"
+  "tmate"
+  "tmux"
+  "tree"
+  "unzip"
+  "watch"
+)
+
+install_packages() {
+  sudo apt-get update
+
+  for repo in ${REPOSITORIES[@]}; do
+    sudo add-apt-repository $repo
+  done
+
+  sudo apt-get udpate
+  for pkg in ${PACKAGES[@]}; do
+    sudo apt-get install $pkg
+  done
+
+  install_go
+  install_fzf
+}
+
+install_go() {
+  which go && return
+  wget -O go.tgz https://storage.googleapis.com/golang/go1.7.0.linux-amd64.tar.gz
+  sudo tar -xzvf go.tgz -C /usr/local
+  rm go.tgz
+
+  mkdir -p ~/workspace
+  export GOPATH="~/workspace"
+}
+
+install_fzf() {
+  which fzf && return
+  wget -O fzf.tgz https://github.com/junegunn/fzf-bin/releases/download/0.13.2/fzf-0.13.2-linux_amd64.tgz
+  tar -xzvf fzf.tgz
+  sudo mv fzf-0.13.2-linux_amd64 /usr/local/bin/fzf
+  rm fzf.tgz
+}
+
+if [ $(uname -s) != "Linux" ]; then
+  exit 0
+fi
+
+install_packages
