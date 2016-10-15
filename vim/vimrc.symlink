@@ -82,29 +82,6 @@ autocmd FileType gitcommit setlocal spell spelllang=en
 let g:languagetool_jar='/usr/local/Cellar/languagetool/3.2/libexec/languagetool-commandline.jar'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Plugin configuration: fzf
-" """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-function s:define_fzf_command()
-	" Change wildignore into space or | separated groups
-	" e.g. .aux .out .toc .jpg .bmp .gif
-	" or   .aux$\|.out$\|.toc$\|.jpg$\|.bmp$\|.gif$
-	let pats =
-	['[*\/]*\([?_.0-9A-Za-z]\+\)\([*\/]*\)\(\\\@<!,\|$\)','\\\@<!,',
-	'\.']
-	let subs = ['\1\2\3', '\\|', '\\.']
-	let expr = substitute(&wig, pats[0], subs[0], 'g')
-	let expr = substitute(expr, pats[1], subs[1], 'g')
-	let expr = substitute(expr, pats[2], subs[2], 'g')
-	let expr = substitute(expr, '\\,', ',', 'g')
-
-	let $FZF_DEFAULT_COMMAND = 'ag . -U -l --hidden
-	--nocolor -g "" |' .
-	\ ' grep -v "' . expr . '"'
-endfunction
-call s:define_fzf_command()
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugin configuration: deoplete
 " """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
