@@ -1,27 +1,86 @@
 #!/bin/sh
 
-# Only for OS X.
-if [[ "Darwin" -ne $(uname) ]]
-then
-  echo "Skipping Homebrew step because it's now OS X."
-  exit 0
-fi
+BREW_PACKAGES=(
+  aria2
+  asciinema
+  ctags
+  curl
+  direnv
+  fasd
+  git
+  git-extras
+  git-duet/tap/git-duet
+  go
+  htop
+  jq
+  lua
+  mercurial
+  mongodb
+  neovim/neovim/neovim
+  openssl
+  pcre
+  pstree
+  reattach-to-user-namespace
+  redis
+  the_silver_searcher
+  tig
+  tmate
+  tmux
+  tree
+  watch
+  wget
+  )
 
-# Check if Homebrew is already installed.
-if test  ! $(which brew)
-then
-  echo "Downloading homebrew..."
-  $(which ruby) -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" > /tmp/homebrew.log
-else
-  echo "Homebrew already installed!"
-fi
+CASK_PACKAGES=(
+  alfred
+  colloquy
+  dropbox
+  google-chrome
+  iterm2
+  screenhero
+  shiftit
+  skype
+  slack
+  spotify
+  sublime
+  vagrant
+  virtualbox
+)
 
-echo "Installing a bunch of libraries..."
+install_brew() {
+  if [[ "Darwin" -ne $(uname) ]]
+  then
+    exit 0
+  fi
 
-brew install ack pcre  tree asciinema go autoconf htop libtool \
-pstree unixodbc automake irssi libxml2 qt vim bazaar jpeg libyaml watch \
-docker jq lua readline wget mercurial reattach-to-user-namespace fasd mysql \
-redis the_silver_searcher git-duet tig openssl tmux
+  if test  ! $(which brew)
+  then
+    echo "Downloading homebrew..."
+    $(which ruby) -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" > /tmp/homebrew.log
+  fi
+}
 
-echo "Phew! All your libraries have been installed successfully."
-exit 0
+update_brew_packages() {
+  brew update
+  brew upgrade
+
+  for pkg in ${BREW_PACKAGES[@]}; do
+  brew install $pkg
+  done
+
+  brew cleanup -s
+}
+
+update_cask_packages() {
+  brew cask update
+
+  for pkg in ${CASK_PACKAGES[@]}; do
+    brew cask install $pkg
+  done
+
+  brew cask cleanup
+}
+
+install_brew
+update_brew_packages
+update_cask_packages
