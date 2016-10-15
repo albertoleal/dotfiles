@@ -3,7 +3,7 @@
 set -e
 
 success () {
-  printf "\r\033[2K  [ \033[00;32mOK\033[0m ] $1\n"
+   printf "\r\033[2K  [ \033[00;32mOK\033[0m ] $1\n"
 }
 
 fail () {
@@ -24,8 +24,8 @@ update_symlinks() {
     fi
 
     # Move file
-    ln -s  $1 $2
-    success "Liked $1 to $2"
+    ln -s  $file $destination
+    success "Linked $file to $destination"
   done
 }
 
@@ -37,12 +37,20 @@ install_scripts() {
 }
 
 update_functions() {
-  for file in $(ls `pwd`/functions)
+  fcs=`pwd`/functions
+  for file in $(ls ${fcs})
   do
-    ln -s /usr/local/bin $file
+    rm -rf /usr/local/bin/${file}
+    ln -s ${fcs}/${file} /usr/local/bin
   done
 }
 
+configure_vim() {
+  git submodule update --init --recursive
+  sh -c vim/vimfiles/install
+}
+
 update_symlinks
-install_scripts
-update_functions
+# install_scripts
+# update_functions
+configure_vim
