@@ -47,12 +47,11 @@ CASK_PACKAGES=(
   virtualbox
 )
 
-install_brew() {
-  if [[ "Darwin" -ne $(uname) ]]
-  then
-    exit 0
-  fi
+only_osx() {
+  [[ $(uname -s) != "Darwin" ]] && exit 0
+}
 
+install_brew() {
   if test  ! $(which brew)
   then
     echo "Downloading homebrew..."
@@ -81,6 +80,7 @@ update_cask_packages() {
   brew cask cleanup
 }
 
+only_osx
 install_brew
 update_brew_packages
 update_cask_packages
