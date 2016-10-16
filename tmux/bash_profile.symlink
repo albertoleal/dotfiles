@@ -11,8 +11,5 @@ export EDITOR=nvim
 # Change this to your console based IRC client of choice.
 export IRC_CLIENT='irssi'
 
-# Load Bash It
-source $BASH_IT/bash_it.sh
-
 [[ -s ~/.bashrc ]] && source ~/.bashrc
 
