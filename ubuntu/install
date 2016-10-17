@@ -9,6 +9,7 @@ REPOSITORIES=(
 PACKAGES=(
   "ack-grep"
   "coreutils"
+  "direnv"
   "fasd"
   "gcc"
   "git"
