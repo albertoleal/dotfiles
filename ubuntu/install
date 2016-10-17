@@ -24,7 +24,7 @@ PACKAGES=(
 )
 
 install_packages() {
-  sudo apt-get update
+  sudo apt-get update -y
 
   for repo in ${REPOSITORIES[@]}; do
     sudo add-apt-repository $repo
@@ -32,7 +32,7 @@ install_packages() {
 
   sudo apt-get udpate
   for pkg in ${PACKAGES[@]}; do
-    sudo apt-get install $pkg
+    sudo apt-get install -y $pkg
   done
 
   install_go
@@ -41,12 +41,13 @@ install_packages() {
 
 install_go() {
   which go && return
-  wget -O go.tgz https://storage.googleapis.com/golang/go1.7.0.linux-amd64.tar.gz
+  wget -O go.tgz https://storage.googleapis.com/golang/go1.7.2.linux-amd64.tar.gz
   sudo tar -xzvf go.tgz -C /usr/local
   rm go.tgz
 
   mkdir -p ~/workspace
   export GOPATH="~/workspace"
+  export PATH=$PATH:$GOROOT/bin
 }
 
 install_fzf() {
