@@ -1,5 +1,11 @@
 #!/bin/sh
 
+only_osx() {
+  [ $(uname -s) != "Darwin" ] && exit 0
+}
+
+only_osx
+
 BREW_PACKAGES=(
   aria2
   asciinema
@@ -46,10 +52,6 @@ CASK_PACKAGES=(
   vagrant
   virtualbox
 )
-
-only_osx() {
-  [[ $(uname -s) != "Darwin" ]] && exit 0
-}
 
 install_brew() {
   if test  ! $(which brew)
