@@ -3,6 +3,7 @@
 REPOSITORIES=(
   "ppa:aacebedo/fasd"
   "ppa:nviennot/tmate"
+  "ppa:neovim-ppa/unstable"
 )
 
 PACKAGES=(
@@ -14,12 +15,16 @@ PACKAGES=(
   "git-extras"
   "jq"
   "make"
+  "neovim"
+  "python3-dev"
+  "python3-pip"
   "silversearcher-ag"
   "tig"
   "tmate"
   "tmux"
   "tree"
   "unzip"
+  "vim-nox"
   "watch"
 )
 
@@ -58,8 +63,13 @@ install_fzf() {
   rm fzf.tgz
 }
 
+install_neovim() {
+  pip3 install neovim
+}
+
 if [ $(uname -s) != "Linux" ]; then
   exit 0
 fi
 
 install_packages
+install_neovim
