@@ -3,4 +3,6 @@
 	Plug 'nelstrom/vim-markdown-folding', { 'for': ['markdown'] }
 " }}}
 
-Plug 'AndrewRadev/splitjoin.vim'
+" Golang {{{
+  Plug 'AndrewRadev/splitjoin.vim'
+" }}}
