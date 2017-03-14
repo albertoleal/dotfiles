@@ -4,6 +4,8 @@
 " Maintained By: Luan Santos (GitHub: @luan)
 " =======================================
 
+set clipboard=unnamed
+
 if !has('nvim')
   set nocompatible
 endif
