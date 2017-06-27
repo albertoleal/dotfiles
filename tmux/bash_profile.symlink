@@ -4,7 +4,7 @@ alias g="git"
 alias vim="nvim"
 
 # export GOPATH=/usr/local/bin
-export GOPATH=/Users/${whoami}/workspace
+export GOPATH=/Users/$(whoami)/workspace
 export PATH=$GOPATH/bin:$PATH
 export EDITOR=nvim
 
