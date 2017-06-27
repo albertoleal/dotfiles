@@ -19,6 +19,7 @@ BREW_PACKAGES=(
   go
   htop
   jq
+  lastpass-cli
   lua
   mercurial
   mongodb
