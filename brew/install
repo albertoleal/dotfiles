@@ -18,6 +18,7 @@ BREW_PACKAGES=(
   git-extras
   git-duet/tap/git-duet
   go
+  gpg
   htop
   jq
   lastpass-cli
