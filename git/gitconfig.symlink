@@ -14,8 +14,7 @@
     st = status
     br = branch
     lola = log --graph --decorate --oneline --all
-    dci = duet-commit --verbose
-    dca = duet-commit --amend --reset-author --verbose
+    ca = commit --amend --reset-author --verbose
     flog = log --pretty=fuller --decorate
 
 [color]
