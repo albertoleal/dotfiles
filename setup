@@ -3,7 +3,7 @@
 set -e
 
 success () {
-   printf "\r\033[2K  [ \033[00;32mOK\033[0m ] %s \n" $1
+   printf "\r\033[2K  [ \033[00;32mOK\033[0m ] %s \n" "${1}"
 }
 
 fail () {
@@ -23,7 +23,6 @@ update_symlinks() {
       mv $destination "${destination}.backup"
     fi
 
-    # Move file
     ln -s  $file $destination
     success "Linked $file to $destination"
   done
