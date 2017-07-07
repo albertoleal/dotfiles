@@ -2,6 +2,26 @@
 
 set -e
 
+
+main () {
+  local command
+
+  command=$1
+  shift
+
+  case $command in
+    vim)
+      configure_vim
+      ;;
+    *)
+      update_symlinks
+      install_scripts
+      update_functions
+      configure_vim
+      ;;
+  esac
+}
+
 success () {
    printf "\r\033[2K  [ \033[00;32mOK\033[0m ] %s \n" "${1}"
 }
@@ -49,7 +69,4 @@ configure_vim() {
   sh -c vim/vimfiles/install
 }
 
-update_symlinks
-install_scripts
-update_functions
-configure_vim
+main "$@"
