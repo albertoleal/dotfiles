@@ -13,7 +13,6 @@ BREW_PACKAGES=(
   curl
   direnv
   fasd
-  flycut
   git
   git-extras
   git-duet/tap/git-duet
