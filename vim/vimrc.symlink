@@ -104,4 +104,6 @@ autocmd FileType go nmap <Leader>i <Plug>(go-info)
 autocmd FileType go nmap <Leader>gt <Plug>(go-decls)
 nmap gr :GoRun<CR>
 
+" Remove empty spaces when saving
+autocmd BufWritePre * %s/\s\+$//e
 
