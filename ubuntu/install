@@ -45,7 +45,7 @@ install_neovim() {
 REPOSITORIES=(
   "ppa:aacebedo/fasd"
   "ppa:nviennot/tmate"
-  "ppa:neovim-ppa/unstable"
+  "ppa:neovim-ppa/stable"
 )
 
 PACKAGES=(
