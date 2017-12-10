@@ -8,6 +8,7 @@ main() {
 }
 
 install_packages() {
+  sudo apt-get install software-properties-common
   sudo apt-get update -y
 
   for repo in ${REPOSITORIES[@]}; do
