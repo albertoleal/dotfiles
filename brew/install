@@ -44,7 +44,6 @@ CASK_PACKAGES=(
   dropbox
   google-chrome
   iterm2
-  screenhero
   shiftit
   skype
   slack
