@@ -5,7 +5,6 @@ main() {
 
   install_packages
   install_neovim
-  configure_gpg_agent
 }
 
 install_packages() {
@@ -44,11 +43,6 @@ install_neovim() {
   pip3 install neovim
 }
 
-configure_gpg_agent() {
-  gpg-agent --daemon --enable-ssh-support \
-          --write-env-file "${HOME}/.gpg-agent-info"
-}
-
 REPOSITORIES=(
   "ppa:aacebedo/fasd"
   "ppa:nviennot/tmate"
@@ -63,6 +57,7 @@ PACKAGES=(
   "fasd"
   "gnupg-agent"
   "gcc"
+  "gnupg2"
   "git"
   "git-extras"
   "jq" "make"
