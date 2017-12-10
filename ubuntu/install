@@ -61,6 +61,7 @@ PACKAGES=(
   "git-extras"
   "jq" "make"
   "neovim"
+  "npm"
   "python3-dev"
   "python3-pip"
   "silversearcher-ag"
