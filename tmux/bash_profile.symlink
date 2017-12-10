@@ -1,7 +1,7 @@
 source ~/workspace/dotfiles/tmux/base16-monokai.dark.sh
 
 # export GOPATH=/usr/local/bin
-export GOPATH=/Users/$(whoami)/workspace
+export GOPATH=/Users/aleal/workspace
 export PATH=$GOPATH/bin:$PATH
 export EDITOR=nvim
 
