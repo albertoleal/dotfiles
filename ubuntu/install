@@ -9,13 +9,13 @@ main() {
 
 install_packages() {
   sudo apt-get install software-properties-common
-  sudo apt-get update -y
 
   for repo in ${REPOSITORIES[@]}; do
     sudo add-apt-repository $repo
   done
 
-  sudo apt-get udpate
+  sudo apt-get update -y
+
   for pkg in ${PACKAGES[@]}; do
     sudo apt-get install -y $pkg
   done
