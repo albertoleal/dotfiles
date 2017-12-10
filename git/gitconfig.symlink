@@ -32,3 +32,5 @@
 	git-committer-initials =
 	git-committer-name =
 	git-committer-email =
+[gpg]
+	program = gpg2
