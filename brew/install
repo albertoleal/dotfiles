@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 main() {
   only_osx
@@ -38,7 +38,7 @@ BREW_PACKAGES=(
   tree
   watch
   wget
-  )
+)
 
 CASK_PACKAGES=(
   alfred
