@@ -1,6 +1,6 @@
 source ~/workspace/dotfiles/tmux/base16-monokai.dark.sh
 
-export GOPATH=/Users/aleal/workspace
+export GOPATH=/$HOME/workspace
 export PATH=$GOPATH/bin:$PATH
 export EDITOR=nvim
 
@@ -13,7 +13,7 @@ export IRC_CLIENT='irssi'
 
 
 # Path to the bash it configuration
-export BASH_IT="/Users/$(whoami)/.bash_it"
+export BASH_IT="/$HOME/.bash_it"
 
 # Lock and Load a custom theme file
 # location /.bash_it/themes/
@@ -48,7 +48,7 @@ source $BASH_IT/bash_it.sh
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
 # Path to the bash it configuration
-export BASH_IT="/Users/albertoleal/.bash_it"
+export BASH_IT="/$HOME/.bash_it"
 
 # Lock and Load a custom theme file
 # location /.bash_it/themes/
@@ -99,7 +99,7 @@ export SCM_CHECK=true
 source "$BASH_IT"/bash_it.sh
 
 # Path to the bash it configuration
-export BASH_IT="/Users/albertoleal/.bash_it"
+export BASH_IT="/$USER/.bash_it"
 
 # Lock and Load a custom theme file
 # location /.bash_it/themes/
