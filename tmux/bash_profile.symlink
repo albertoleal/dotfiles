@@ -1,9 +1,10 @@
 source ~/workspace/dotfiles/tmux/base16-monokai.dark.sh
 
-# export GOPATH=/usr/local/bin
 export GOPATH=/Users/aleal/workspace
 export PATH=$GOPATH/bin:$PATH
 export EDITOR=nvim
+
+[[ $(uname -s) == "Linux" ]] && export PATH=$PATH:/usr/local/go/bin
 
 # Change this to your console based IRC client of choice.
 export IRC_CLIENT='irssi'
