@@ -29,7 +29,7 @@ install_go() {
   sudo tar -xzvf go.tgz -C /usr/local
   rm go.tgz
 
-  mkdir -p ~/workspace
+  export PATH=$PATH:/usr/local/go/bin
 }
 
 install_fzf() {
