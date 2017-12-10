@@ -1,34 +1,11 @@
 #!/bin/bash
 
-REPOSITORIES=(
-  "ppa:aacebedo/fasd"
-  "ppa:nviennot/tmate"
-  "ppa:neovim-ppa/unstable"
-)
+main() {
+  only_ubuntu
 
-PACKAGES=(
-  "ack-grep"
-  "coreutils"
-  "direnv"
-  "docker-compose"
-  "fasd"
-  "gcc"
-  "git"
-  "git-extras"
-  "jq"
-  "make"
-  "neovim"
-  "python3-dev"
-  "python3-pip"
-  "silversearcher-ag"
-  "tig"
-  "tmate"
-  "tmux"
-  "tree"
-  "unzip"
-  "vim-nox"
-  "watch"
-)
+  install_packages
+  install_neovim
+}
 
 install_packages() {
   sudo apt-get update -y
@@ -48,20 +25,18 @@ install_packages() {
 
 install_go() {
   which go && return
-  wget -O go.tgz https://storage.googleapis.com/golang/go1.7.2.linux-amd64.tar.gz
+  wget -O go.tgz https://storage.googleapis.com/golang/go1.9.2.linux-amd64.tar.gz
   sudo tar -xzvf go.tgz -C /usr/local
   rm go.tgz
 
   mkdir -p ~/workspace
-  export GOPATH="~/workspace"
-  export PATH=$PATH:$GOROOT/bin
 }
 
 install_fzf() {
   which fzf && return
-  wget -O fzf.tgz https://github.com/junegunn/fzf-bin/releases/download/0.13.2/fzf-0.13.2-linux_amd64.tgz
+  wget -O fzf.tgz https://github.com/junegunn/fzf/archive/0.17.3.tar.gz
   tar -xzvf fzf.tgz
-  sudo mv fzf-0.13.2-linux_amd64 /usr/local/bin/fzf
+  sudo mv fzf-0.17.3 /usr/local/bin/fzf
   rm fzf.tgz
 }
 
@@ -69,9 +44,37 @@ install_neovim() {
   pip3 install neovim
 }
 
-if [ $(uname -s) != "Linux" ]; then
-  exit 0
-fi
+REPOSITORIES=(
+  "ppa:aacebedo/fasd"
+  "ppa:nviennot/tmate"
+  "ppa:neovim-ppa/unstable"
+)
 
-install_packages
-install_neovim
+PACKAGES=(
+  "ack-grep"
+  "coreutils"
+  "direnv"
+  "docker-compose"
+  "fasd"
+  "gcc"
+  "git"
+  "git-extras"
+  "jq" "make"
+  "neovim"
+  "python3-dev"
+  "python3-pip"
+  "silversearcher-ag"
+  "tig"
+  "tmate"
+  "tmux"
+  "tree"
+  "unzip"
+  "vim-nox"
+  "watch"
+)
+
+only_ubuntu() {
+  [[ $(uname -s) != "Linux" ]] && exit 0
+}
+
+main
