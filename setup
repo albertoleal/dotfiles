@@ -84,7 +84,7 @@ install_vim() {
 }
 
 scripts() {
-  for file in $(find `pwd` -maxdepth 3 -name "install"); do
+  for file in $(find `pwd` -maxdepth 2 -name "install"); do
     sh -c $file
   done
 }
