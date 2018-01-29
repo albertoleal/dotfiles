@@ -99,7 +99,7 @@ export SCM_CHECK=true
 source "$BASH_IT"/bash_it.sh
 
 # Path to the bash it configuration
-export BASH_IT="/$USER/.bash_it"
+export BASH_IT="/Users/$USER/.bash_it"
 
 # Lock and Load a custom theme file
 # location /.bash_it/themes/
