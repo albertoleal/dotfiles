@@ -1,0 +1,15 @@
+#!/bin/bash -x
+
+HOURS="$1"
+
+if [ -z "$HOURS" ]; then
+  HOURS="12"
+fi
+
+/usr/bin/ssh-add -D
+
+trap "rm -f key" EXIT
+
+lpass show "git-stuff/ssh-private-key" --notes > key
+chmod 600 key
+ssh-add -t "$HOURS"H key
