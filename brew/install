@@ -27,6 +27,7 @@ BREW_PACKAGES=(
   mercurial
   mongodb
   neovim/neovim/neovim
+  node
   openssl
   pcre
   pstree
