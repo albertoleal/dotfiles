@@ -47,6 +47,7 @@ CASK_PACKAGES=(
   colloquy
   dropbox
   google-chrome
+  google-cloud-sdk
   iterm2
   shiftit
   skype
