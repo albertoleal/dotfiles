@@ -23,6 +23,7 @@ BREW_PACKAGES=(
   jq
   lastpass-cli
   kubectl
+  kubernetes-helm
   lua
   mercurial
   mongodb
