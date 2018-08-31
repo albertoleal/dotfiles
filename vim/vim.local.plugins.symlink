@@ -6,3 +6,5 @@
 " Golang {{{
   Plug 'AndrewRadev/splitjoin.vim'
 " }}}
+
+Plug 'dracula/vim', { 'as': 'dracula' }
