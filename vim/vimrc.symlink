@@ -106,6 +106,3 @@ nmap gr :GoRun<CR>
 
 " Remove empty spaces when saving
 autocmd BufWritePre * %s/\s\+$//e
-
-syntax on
-color dracula
