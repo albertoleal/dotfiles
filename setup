@@ -76,6 +76,8 @@ load_functions() {
     ln -s "$fns/$file" "$destination"
     success "Linked $file to $destination"
   done
+
+  ln -F -s /usr/local/bin/git_prompt_info ~/.bash_it/custom/git_prompt_info.bash
 }
 
 install_vim() {
