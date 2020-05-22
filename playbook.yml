@@ -103,7 +103,6 @@
     - {target: ~/.bashrc, src: "{{ansible_env.PWD}}/config/bashrc"}
     - {target: ~/.bash_profile, src: "{{ansible_env.PWD}}/config/bash_profile"}
     - {target: ~/.gitconfig, src: "{{ansible_env.PWD}}/config/gitconfig"}
-    - {target: ~/.git-authors, src: "{{ansible_env.PWD}}/config/git-authors"}
     - {target: ~/.config/nvim/user/before.vim, src: "{{ansible_env.PWD}}/config/nvim/before.vim"}
     - {target: ~/.config/nvim/user/plug.vim, src: "{{ansible_env.PWD}}/config/nvim/plug.vim"}
     - {target: ~/.config/nvim/user/after.vim, src: "{{ansible_env.PWD}}/config/nvim/after.vim"}

@@ -1,3 +1,6 @@
+" Plugins
+
+
 " Markdown {{{
   Plug 'tpope/vim-markdown', { 'for': ['markdown'] }
   Plug 'nelstrom/vim-markdown-folding', { 'for': ['markdown'] }
