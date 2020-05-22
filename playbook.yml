@@ -1,0 +1,111 @@
+---
+- hosts: all
+  tasks:
+  - name: update brew
+    homebrew: update_homebrew=yes
+
+  - name: add Homebrew taps
+    homebrew_tap: name={{item}}
+    with_items:
+    - homebrew/cask-fonts
+    - git-duet/tap
+    - neovim/neovim
+
+  - name: install Homebrew casks
+    homebrew_cask: name={{item}} install_options=appdir=/Applications
+    with_items:
+    - alfred
+    - flycut
+    - font-inconsolata
+    - font-inconsolata-nerd-font
+    - goland
+    - google-cloud-sdk
+    - istat-menus
+    - iterm2
+    - ngrok
+    - slack
+    - sublime-text
+    - tuple
+    - vagrant
+    - virtualbox
+    - visual-studio-code
+    - zoomus
+
+  - name: install Homebrew packages
+    homebrew:
+      name: "{{item.name}}"
+      install_options: "{{item.install_options}}"
+      state: latest
+    with_items:
+
+    - {name: bash, install_options: ''}
+    - {name: bash-completion@2, install_options: ''}
+    - {name: bat, install_options: ''}
+    - {name: ctags, install_options: ''}
+    - {name: direnv, install_options: ''}
+    - {name: fasd, install_options: ''}
+    - {name: fd, install_options: ''}
+    - {name: gcc, install_options: ''}
+    - {name: git, install_options: ''}
+    - {name: git-duet, install_options: ''}
+    - {name: git-extras, install_options: ''}
+    - {name: go, install_options: ''}
+    - {name: htop, install_options: ''}
+    - {name: jq, install_options: ''}
+    - {name: kind, install_options: ''}
+    - {name: kubectx, install_options: ''}
+    - {name: kubernetes-cli, install_options: ''}
+    - {name: kubernetes-helm, install_options: ''}
+    - {name: lastpass-cli, install_options: ''}
+    - {name: libgit2, install_options: ''}
+    - {name: neovim, install_options: ''}
+    - {name: node, install_options: ''}
+    - {name: openssl, install_options: ''}
+    - {name: pcre, install_options: ''}
+    - {name: pstree, install_options: ''}
+    - {name: rbenv, install_options: ''}
+    - {name: reattach-to-user-namespace, install_options: ''}
+    - {name: ripgrep, install_options: ''}
+    - {name: ruby-build, install_options: ''}
+    - {name: shellcheck, install_options: ''}
+    - {name: skaffold, install_options: ''}
+    - {name: stern, install_options: ''}
+    - {name: the_silver_searcher, install_options: ''}
+    - {name: tig, install_options: ''}
+    - {name: tmate, install_options: ''}
+    - {name: tmux, install_options: ''}
+    - {name: tree, install_options: ''}
+    - {name: watch, install_options: ''}
+    - {name: wget, install_options: ''}
+    - {name: yarn, install_options: ''}
+    - {name: yq, install_options: ''}
+
+  - name: get TPM
+    git:
+      repo: https://github.com/tmux-plugins/tpm
+      dest: ~/.tmux/plugins/tpm
+
+  - name: install python support for nvim
+    command: pip3 install --user --upgrade pynvim
+
+  - name: install Luan's Neovim distribution
+    git:
+      repo: https://github.com/luan/nvim
+      dest: ~/.config/nvim
+
+  - name: set up symlinks
+    file:
+      path: "{{item.target}}"
+      src: "{{item.src}}"
+      state: link
+      force: yes
+    with_items:
+    - {target: ~/.bashrc, src: "{{ansible_env.PWD}}/config/bashrc"}
+    - {target: ~/.bash_profile, src: "{{ansible_env.PWD}}/config/bash_profile"}
+    - {target: ~/.gitconfig, src: "{{ansible_env.PWD}}/config/gitconfig"}
+    - {target: ~/.git-authors, src: "{{ansible_env.PWD}}/config/git-authors"}
+    - {target: ~/.config/nvim/user/before.vim, src: "{{ansible_env.PWD}}/config/nvim/before.vim"}
+    - {target: ~/.config/nvim/user/plug.vim, src: "{{ansible_env.PWD}}/config/nvim/plug.vim"}
+    - {target: ~/.config/nvim/user/after.vim, src: "{{ansible_env.PWD}}/config/nvim/after.vim"}
+    - {target: ~/.tmux.conf, src: "{{ansible_env.PWD}}/config/tmux.conf"}
+

@@ -1,7 +1,0 @@
-#!/bin/bash
-
-which rvm && return
-
-echo "Downloading and installing rvm.."
-\curl -sSL https://get.rvm.io | bash -s stable --ruby
-echo "RVM installed!"
