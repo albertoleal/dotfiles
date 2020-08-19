@@ -38,6 +38,7 @@
     - {name: direnv, install_options: ''}
     - {name: fasd, install_options: ''}
     - {name: fd, install_options: ''}
+    - {name: fzf, install_options: ''}
     - {name: gcc, install_options: ''}
     - {name: git, install_options: ''}
     - {name: git-duet, install_options: ''}

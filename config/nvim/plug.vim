@@ -23,3 +23,6 @@ Plug 'peitalin/vim-jsx-typescript'
 Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 Plug 'jparise/vim-graphql'
 " }}}
+
+Plug 'junegunn/fzf'
+Plug 'junegunn/fzf.vim'
