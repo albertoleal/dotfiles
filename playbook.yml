@@ -24,7 +24,6 @@
     - istat-menus
     - ngrok
     - shiftit
-    - zoomus
 
   - name: install Homebrew packages
     homebrew:
@@ -91,7 +90,6 @@
       state: link
       force: yes
     with_items:
-    - {target: ~/.bash_it/custom/env.bash, src: "{{ansible_env.PWD}}/config/bash/env.bash"}
     - {target: ~/.bashrc, src: "{{ansible_env.PWD}}/config/bashrc"}
     - {target: ~/.bash_profile, src: "{{ansible_env.PWD}}/config/bash_profile"}
     - {target: ~/.gitconfig, src: "{{ansible_env.PWD}}/config/gitconfig"}
