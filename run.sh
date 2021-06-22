@@ -10,22 +10,49 @@ log() {
   echo
 }
 
-install_bash_it() {
-  git clone --depth=1 https://github.com/Bash-it/bash-it.git "$HOME/.bash_it"
-  "$HOME/.bash_it/install.sh"
-}
-
 install_ansible() {
   log "Installing/upgrading Homebrew"
   ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
   brew install ansible
 }
 
-log "Installing/Updating home..."
+link_functions() {
+  local destination fns
+  destination="/usr/local/bin"
+  fns="$(pwd)/functions"
 
-if [[ ! -d "$HOME/.bash_it" ]] ; then
-  install_bash_it
-fi
+  for file in $(ls $fns); do
+    rm -rf "/usr/local/bin/$file"
+    ln -s "$fns/$file" "$destination"
+    success "Linked $file to $destination"
+  done
+}
+
+link_symlinks() {
+  for file in $(find `pwd` -name "*.symlink"); do
+    destination="$HOME/.`basename \"${file%.*}\"`"
+
+    # Create a backup if file exists
+    if [[  -f "$destination" ]] || [[ -L "$destination" ]]; then
+      mv "$destination" "${destination}.backup"
+    fi
+
+    ln -s  "$file" "$destination"
+    success "Linked $file to $destination"
+  done
+}
+
+success () {
+   printf "\r\033[2K  [ \033[00;32mOK\033[0m ] %s \n" "$1"
+}
+
+fail () {
+  printf "\r\033[2K  [\033[0;31mFAIL\033[0m] %s \n" "$1"
+  echo ''
+  exit
+}
+
+log "Installing/Updating home..."
 
 if ! which ansible-playbook > /dev/null 2>&1 ; then
   echo "ansible-playbook not found on \$PATH, installing"
@@ -36,4 +63,7 @@ fi
   cd "$(dirname "$0")"
   cmd="ansible-playbook -i localhost, --con local playbook.yml"
   $cmd
-  )
+)
+
+link_functions
+link_symlinks

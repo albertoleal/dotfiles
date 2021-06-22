@@ -1,0 +1,39 @@
+# Path to your oh-my-zsh installation.
+export ZSH="/Users/albertoleal/.oh-my-zsh"
+
+# Set name of the theme to load --- if set to "random", it will
+# load a random theme each time oh-my-zsh is loaded, in which case,
+# to know which specific one was loaded, run: echo $RANDOM_THEME
+# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
+ZSH_THEME="robbyrussell"
+
+# Which plugins would you like to load?
+# Standard plugins can be found in $ZSH/plugins/
+# Custom plugins may be added to $ZSH_CUSTOM/plugins/
+# Example format: plugins=(rails git textmate ruby lighthouse)
+# Add wisely, as too many plugins slow down shell startup.
+plugins=(git)
+
+source $ZSH/oh-my-zsh.sh
+
+# User configuration
+export PATH=$HOME/bin:/usr/local/bin:$PATH
+export GOPATH=$HOME/workspace
+export GOROOT=/usr/local/opt/go/libexec
+export PATH=$GOPATH/bin:$PATH
+export EDITOR=nvim
+
+# Configure fasd for fast...
+alias a='fasd -a'        # any
+alias s='fasd -si'       # show / search / select
+alias d='fasd -d'        # directory
+alias f='fasd -f'        # file
+alias sd='fasd -sid'     # interactive directory selection
+alias sf='fasd -sif'     # interactive file selection
+alias z='fasd_cd -d'     # cd, same functionality as j in autojump
+alias zz='fasd_cd -d -i' # cd with interactive selection
+eval "$(fasd --init auto)"
+
+. /usr/local/opt/chruby/share/chruby/chruby.sh
+. /usr/local/opt/chruby/share/chruby/auto.sh
+chruby 3.0.0

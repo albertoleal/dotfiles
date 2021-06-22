@@ -26,3 +26,7 @@ Plug 'jparise/vim-graphql'
 
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
+
+Plug 'luan/vipe'
+
+Plug 'simeji/winresizer'

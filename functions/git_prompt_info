@@ -1,7 +1,0 @@
-# Add committer initials to the git prompt info
-function git_prompt_info {
-  git_prompt_vars
-  GIT_DUET_INITIALS=$(echo $(git config --get-regexp ^duet.env.git-.*-initials | sed -e 's/^.*-initials //') | sed -e 's/ /+/')
-  GIT_PAIR=${GIT_DUET_INITIALS:-`git config user.initials | sed 's% %+%'`}
-  echo -e " $GIT_PAIR$SCM_PREFIX$SCM_BRANCH$SCM_STATE$SCM_SUFFIX"
-}
