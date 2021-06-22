@@ -41,6 +41,7 @@
     - {name: git, install_options: ''}
     - {name: git-duet, install_options: ''}
     - {name: git-extras, install_options: ''}
+    - {name: glances, install_options: ''}
     - {name: go, install_options: ''}
     - {name: htop, install_options: ''}
     - {name: jq, install_options: ''}
