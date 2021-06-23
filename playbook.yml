@@ -34,6 +34,7 @@
     with_items:
     - {name: bat, install_options: ''}
     - {name: ctags, install_options: ''}
+    - {name: chruby, install_options: ''}
     - {name: direnv, install_options: ''}
     - {name: fasd, install_options: ''}
     - {name: fd, install_options: ''}
@@ -58,7 +59,6 @@
     - {name: pstree, install_options: ''}
     - {name: rbenv, install_options: ''}
     - {name: ripgrep, install_options: ''}
-    - {name: ruby-build, install_options: ''}
     - {name: shellcheck, install_options: ''}
     - {name: skaffold, install_options: ''}
     - {name: stern, install_options: ''}
