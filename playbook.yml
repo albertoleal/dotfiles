@@ -59,6 +59,7 @@
     - {name: pstree, install_options: ''}
     - {name: rbenv, install_options: ''}
     - {name: ripgrep, install_options: ''}
+    - {name: ruby-install, install_options: ''}
     - {name: shellcheck, install_options: ''}
     - {name: skaffold, install_options: ''}
     - {name: stern, install_options: ''}
