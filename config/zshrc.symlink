@@ -36,4 +36,4 @@ eval "$(fasd --init auto)"
 
 . /usr/local/opt/chruby/share/chruby/chruby.sh
 . /usr/local/opt/chruby/share/chruby/auto.sh
-chruby 3.0.0
+chruby 3.0.1
