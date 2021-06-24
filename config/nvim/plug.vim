@@ -12,17 +12,11 @@
 " Javascript {{{
   Plug 'pangloss/vim-javascript'
   Plug 'leafgarland/typescript-vim'
-  Plug 'peitalin/vim-jsx-typescript'
-  Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
-  Plug 'jparise/vim-graphql'
 " }}}
 
+Plug 'simeji/winresizer'
+Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'junegunn/fzf'
-
 Plug 'luan/vipe'
 
-Plug 'simeji/winresizer'
-
 Plug 'dracula/vim', { 'as': 'dracula' }
-
-Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
