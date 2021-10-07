@@ -30,3 +30,6 @@
   mtime = 1494852013
 [pull]
 	rebase = true
+[credential]
+	helper = 
+	helper = store --file /opt/dev/var/private/git_credential_store

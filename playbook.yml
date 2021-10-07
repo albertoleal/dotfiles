@@ -10,7 +10,6 @@
     homebrew_tap: name={{item}}
     with_items:
     - homebrew/cask-fonts
-    - git-duet/tap
     - neovim/neovim
 
   - name: install Homebrew casks
@@ -25,6 +24,7 @@
     - istat-menus
     - ngrok
     - shiftit
+    - visual-studio-code
 
   - name: install Homebrew packages
     homebrew:
@@ -41,7 +41,6 @@
     - {name: fzf, install_options: ''}
     - {name: gcc, install_options: ''}
     - {name: git, install_options: ''}
-    - {name: git-duet, install_options: ''}
     - {name: git-extras, install_options: ''}
     - {name: glances, install_options: ''}
     - {name: go, install_options: ''}
