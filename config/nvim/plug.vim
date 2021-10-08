@@ -20,3 +20,5 @@ Plug 'junegunn/fzf'
 Plug 'luan/vipe'
 
 Plug 'dracula/vim', { 'as': 'dracula' }
+
+Plug 'mileszs/ack.vim'
