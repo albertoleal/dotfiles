@@ -14,6 +14,10 @@
   Plug 'leafgarland/typescript-vim'
 " }}}
 
+" Ruby {{{
+  Plug 'vim-ruby/vim-ruby'
+" }}}
+
 Plug 'simeji/winresizer'
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'junegunn/fzf'
