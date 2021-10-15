@@ -25,3 +25,6 @@ command! Qall qall
 
 " If you want to start window resize mode by `Ctrl+W`
 let g:winresizer_start_key = '<C-E>'
+
+" Remove trailing spaces on save
+autocmd BufWritePre * :%s/\s\+$//e
