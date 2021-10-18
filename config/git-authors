@@ -1,0 +1,7 @@
+# Format: <intials>: <name>; <email short name>
+
+authors:
+  al: Alberto Leal; albertonb
+
+email:
+  domain: gmail.com

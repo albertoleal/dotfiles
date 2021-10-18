@@ -99,8 +99,11 @@
     - {target: ~/.config/nvim/user/before.vim, src: "{{ansible_env.PWD}}/config/nvim/before.vim"}
     - {target: ~/.config/nvim/user/plug.vim, src: "{{ansible_env.PWD}}/config/nvim/plug.vim"}
     - {target: ~/.config/nvim/user/after.vim, src: "{{ansible_env.PWD}}/config/nvim/after.vim"}
+    - {target: ~/.ruby-version, src: "{{ansible_env.PWD}}/config/ruby-version"}
     - {target: ~/.tmux.conf, src: "{{ansible_env.PWD}}/config/tmux.conf"}
+    - {target: ~/bin/duet, src: "{{ansible_env.PWD}}/functions/duet"}
     - {target: ~/bin/load-key, src: "{{ansible_env.PWD}}/functions/load-key"}
+    - {target: ~/bin/solo, src: "{{ansible_env.PWD}}/functions/solo"}
     - {target: ~/bin/take, src: "{{ansible_env.PWD}}/functions/take"}
 
   - name: install oh-my-zsh
