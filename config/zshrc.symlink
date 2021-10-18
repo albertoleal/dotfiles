@@ -19,7 +19,6 @@ source $ZSH/oh-my-zsh.sh
 # User configuration
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 export GOPATH=$HOME/workspace
-export GOROOT=/usr/local/opt/go/libexec
 export PATH=$GOPATH/bin:$PATH
 export EDITOR=nvim
 
