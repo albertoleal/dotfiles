@@ -20,3 +20,7 @@ My precious.
   that's because: either it has the useBundler set to true and nvim tries to
   open another zsh session, so load things in the `.zprofile` or just install
   the gem manually and set the useBundler to false.
+
+### Git
+
+- cp config/git-authors.sample ~/.git-authors

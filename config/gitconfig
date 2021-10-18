@@ -11,6 +11,8 @@
 [alias]
   co = checkout
   ci = commit --verbose
+  dci = duet-commit
+  dca = duet-commit --amend
   st = status
   br = branch
   lola = log --graph --decorate --oneline --all
@@ -23,11 +25,17 @@
 [credential]
 	helper =
 	helper = store --file /opt/dev/var/private/git_credential_store
+
 [duet "env"]
 	git-author-initials = al
 	git-author-name = Alberto Leal
 	git-author-email = albertonb@gmail.com
-	mtime = 1634551779
+	mtime = 1634552950
 	git-committer-initials = 
 	git-committer-name = 
 	git-committer-email = 
+[user]
+	name = Alberto Leal
+	email = albertonb@gmail.com
+[init]
+	templatedir = /Users/aleal/.git-template

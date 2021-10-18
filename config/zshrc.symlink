@@ -22,6 +22,10 @@ export GOPATH=$HOME/workspace
 export PATH=$GOPATH/bin:$PATH
 export EDITOR=nvim
 
+export GIT_DUET_GLOBAL=true
+export GIT_DUET_ROTATE_AUTHOR=1
+export GIT_DUET_CO_AUTHORED_BY=1
+
 # Configure fasd for fast...
 alias a='fasd -a'        # any
 alias s='fasd -si'       # show / search / select
