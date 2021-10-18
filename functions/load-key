@@ -1,4 +1,4 @@
-#!/bin/bash -x
+#!/bin/bash
 
 HOURS="$1"
 
@@ -10,6 +10,6 @@ fi
 
 trap "rm -f key" EXIT
 
-lpass show "git-stuff/ssh-private-key" --notes > key
+op get item ssh-key --fields notesPlain > key
 chmod 600 key
 ssh-add -t "$HOURS"H key
