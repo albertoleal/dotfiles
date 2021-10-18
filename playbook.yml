@@ -52,6 +52,7 @@
     - {name: kubernetes-cli, install_options: ''}
     - {name: kubernetes-helm, install_options: ''}
     - {name: libgit2, install_options: ''}
+    - {name: mr, install_options: ''}
     - {name: neovim, install_options: ''}
     - {name: node, install_options: ''}
     - {name: openssl, install_options: ''}

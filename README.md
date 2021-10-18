@@ -13,6 +13,7 @@ My precious.
 - Run `:UpdateRemotePlugins`
 - Run `:checkhealth`
 - Run `:PlugInstall`
+- npm install -g livedown
 
 #### Solargraph
 
