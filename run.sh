@@ -16,18 +16,6 @@ install_ansible() {
   brew install ansible
 }
 
-link_functions() {
-  local destination fns
-  destination="/usr/local/bin"
-  fns="$(pwd)/functions"
-
-  for file in $(ls $fns); do
-    rm -rf "/usr/local/bin/$file"
-    ln -s "$fns/$file" "$destination"
-    success "Linked $file to $destination"
-  done
-}
-
 link_symlinks() {
   for file in $(find `pwd` -name "*.symlink"); do
     destination="$HOME/.`basename \"${file%.*}\"`"
@@ -65,5 +53,4 @@ fi
   $cmd
 )
 
-link_functions
 link_symlinks
