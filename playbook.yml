@@ -35,6 +35,7 @@
     - {name: bat, install_options: ''}
     - {name: ctags, install_options: ''}
     - {name: chruby, install_options: ''}
+    - {name: diff-so-fancy, install_options: ''}
     - {name: direnv, install_options: ''}
     - {name: fasd, install_options: ''}
     - {name: fd, install_options: ''}
