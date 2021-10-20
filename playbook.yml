@@ -17,13 +17,16 @@
     with_items:
     - alfred
     - flycut
+    - fellow
     - font-inconsolata
     - font-inconsolata-nerd-font
     - font-meslo-lg-nerd-font
     - google-cloud-sdk
     - istat-menus
     - ngrok
+    - rectangle
     - shiftit
+    - tuple
     - visual-studio-code
 
   - name: install Homebrew packages
@@ -58,7 +61,6 @@
     - {name: openssl, install_options: ''}
     - {name: pcre, install_options: ''}
     - {name: pstree, install_options: ''}
-    - {name: rbenv, install_options: ''}
     - {name: ripgrep, install_options: ''}
     - {name: ruby-install, install_options: ''}
     - {name: shellcheck, install_options: ''}
@@ -96,6 +98,7 @@
     with_items:
     - {target: ~/.zshrc, src: "{{ansible_env.PWD}}/config/zshrc.symlink"}
     - {target: ~/.rubocop.yml, src: "{{ansible_env.PWD}}/config/rubocop.yml.symlink"}
+    - {target: ~/.ansible.cfg, src: "{{ansible_env.PWD}}/config/ansible.cfg.symlink"}
     - {target: ~/.gitconfig, src: "{{ansible_env.PWD}}/config/gitconfig"}
     - {target: ~/.config/nvim/user/before.vim, src: "{{ansible_env.PWD}}/config/nvim/before.vim"}
     - {target: ~/.config/nvim/user/plug.vim, src: "{{ansible_env.PWD}}/config/nvim/plug.vim"}
