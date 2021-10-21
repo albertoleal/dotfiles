@@ -38,8 +38,11 @@ alias zz='fasd_cd -d -i' # cd with interactive selection
 eval "$(fasd --init auto)"
 
 alias vim='nvim'
+alias up='eval $(startup)'
 
-source /usr/local/opt/chruby/share/chruby/chruby.sh
-source /usr/local/opt/chruby/share/chruby/auto.sh
+# source /usr/local/opt/chruby/share/chruby/chruby.sh
+# source /usr/local/opt/chruby/share/chruby/auto.sh
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+[ -f /opt/dev/dev.sh ] && source /opt/dev/dev.sh
