@@ -10,7 +10,8 @@
     homebrew_tap: name={{item}}
     with_items:
     - homebrew/cask-fonts
-    - neovim/neovim
+    - git-duet/tap
+    - shiftit
 
   - name: install Homebrew casks
     homebrew_cask: name={{item}} install_options=appdir=/Applications
@@ -25,7 +26,6 @@
     - istat-menus
     - ngrok
     - rectangle
-    - shiftit
     - tuple
     - visual-studio-code
 
@@ -45,6 +45,7 @@
     - {name: fzf, install_options: ''}
     - {name: gcc, install_options: ''}
     - {name: git, install_options: ''}
+    - {name: git-duet, install_options: ''}
     - {name: git-extras, install_options: ''}
     - {name: glances, install_options: ''}
     - {name: go, install_options: ''}
@@ -100,9 +101,9 @@
     - {target: ~/.rubocop.yml, src: "{{ansible_env.PWD}}/config/rubocop.yml.symlink"}
     - {target: ~/.ansible.cfg, src: "{{ansible_env.PWD}}/config/ansible.cfg.symlink"}
     - {target: ~/.gitconfig, src: "{{ansible_env.PWD}}/config/gitconfig"}
-    - {target: ~/.config/nvim/user/before.vim, src: "{{ansible_env.PWD}}/config/nvim/before.vim"}
-    - {target: ~/.config/nvim/user/plug.vim, src: "{{ansible_env.PWD}}/config/nvim/plug.vim"}
-    - {target: ~/.config/nvim/user/after.vim, src: "{{ansible_env.PWD}}/config/nvim/after.vim"}
+    - {target: ~/.config/nvim/lua/user/before.lua, src: "{{ansible_env.PWD}}/config/nvim/before.lua"}
+    - {target: ~/.config/nvim/lua/user/plug.lua, src: "{{ansible_env.PWD}}/config/nvim/plugins.lua"}
+    - {target: ~/.config/nvim/lua/user/after.lua, src: "{{ansible_env.PWD}}/config/nvim/after.lua"}
     - {target: ~/.ruby-version, src: "{{ansible_env.PWD}}/config/ruby-version"}
     - {target: ~/.tmux.conf, src: "{{ansible_env.PWD}}/config/tmux.conf"}
     - {target: ~/bin/duet, src: "{{ansible_env.PWD}}/functions/duet"}
