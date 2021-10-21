@@ -11,6 +11,8 @@ map('n', ',hs', ':split<CR>', {silent = true})
 map('n', ',vs', ':vsplit<CR>', {silent = true})
 map('n', '\\', ':NERDTreeToggle<CR>', {noremap = true, silent = true})
 
+map('n', '<leader><space>', ':Vipe<CR>', {silent = true})
+
 -- " Switch between test and production code
 map('n', '<Leader>.', ':A<CR>',{})
 

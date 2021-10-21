@@ -14,6 +14,7 @@ My precious.
 - Run `:checkhealth`
 - Run `:PlugInstall`
 - npm install -g livedown
+- ln -s $HOME/.local/share/nvim/site/pack/packer/start/vipe $HOME/bin
 
 #### Solargraph
 

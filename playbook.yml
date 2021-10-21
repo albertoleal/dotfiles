@@ -101,7 +101,7 @@
     - {target: ~/.ansible.cfg, src: "{{ansible_env.PWD}}/config/ansible.cfg.symlink"}
     - {target: ~/.gitconfig, src: "{{ansible_env.PWD}}/config/gitconfig"}
     - {target: ~/.config/nvim/lua/user/before.lua, src: "{{ansible_env.PWD}}/config/nvim/before.lua"}
-    - {target: ~/.config/nvim/lua/user/plug.lua, src: "{{ansible_env.PWD}}/config/nvim/plugins.lua"}
+    - {target: ~/.config/nvim/lua/user/plugins.lua, src: "{{ansible_env.PWD}}/config/nvim/plugins.lua"}
     - {target: ~/.config/nvim/lua/user/after.lua, src: "{{ansible_env.PWD}}/config/nvim/after.lua"}
     - {target: ~/.ruby-version, src: "{{ansible_env.PWD}}/config/ruby-version"}
     - {target: ~/.tmux.conf, src: "{{ansible_env.PWD}}/config/tmux.conf"}
