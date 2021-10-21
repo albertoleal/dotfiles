@@ -11,7 +11,6 @@
     with_items:
     - homebrew/cask-fonts
     - git-duet/tap
-    - shiftit
 
   - name: install Homebrew casks
     homebrew_cask: name={{item}} install_options=appdir=/Applications
