@@ -2,6 +2,7 @@
 - hosts: all
   tasks:
   - file: path=~/bin state=directory mode=0755
+  - file: path=~/.oh-my-zsh/themes state=directory mode=0755
 
   - name: update brew
     homebrew: update_homebrew=yes
@@ -64,8 +65,6 @@
     - {name: ripgrep, install_options: ''}
     - {name: ruby-install, install_options: ''}
     - {name: shellcheck, install_options: ''}
-    - {name: skaffold, install_options: ''}
-    - {name: stern, install_options: ''}
     - {name: the_silver_searcher, install_options: ''}
     - {name: tig, install_options: ''}
     - {name: tmate, install_options: ''}
@@ -96,7 +95,8 @@
       state: link
       force: yes
     with_items:
-    - {target: ~/.zshrc, src: "{{ansible_env.PWD}}/config/zshrc.symlink"}
+    - {target: ~/.zshrc, src: "{{ansible_env.PWD}}/config/zsh/zshrc"}
+    - {target: ~/.oh-my-zsh/themes/pairing.zsh-theme, src: "{{ansible_env.PWD}}/config/zsh/pairing.zsh-theme"}
     - {target: ~/.rubocop.yml, src: "{{ansible_env.PWD}}/config/ruby/rubocop.yml.symlink"}
     - {target: ~/.ruby-version, src: "{{ansible_env.PWD}}/config/ruby/ruby-version.symlink"}
     - {target: ~/.pryrc, src: "{{ansible_env.PWD}}/config/ruby/pryrc.symlink"}

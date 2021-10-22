@@ -5,22 +5,24 @@ export ZSH="/Users/$USER/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="robbyrussell"
+ZSH_THEME="pairing"
+
 
 # Which plugins would you like to load?
 # Standard plugins can be found in $ZSH/plugins/
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(git chruby)
 
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
+export EDITOR=nvim
+
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 export GOPATH=$HOME/workspace
 export PATH=$GOPATH/bin:$PATH
-export EDITOR=nvim
 
 export GIT_DUET_GLOBAL=true
 export GIT_DUET_ROTATE_AUTHOR=1
