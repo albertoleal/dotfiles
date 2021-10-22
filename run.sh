@@ -16,30 +16,6 @@ install_ansible() {
   brew install ansible
 }
 
-link_symlinks() {
-  for file in $(find `pwd` -name "*.symlink"); do
-    destination="$HOME/.`basename \"${file%.*}\"`"
-
-    # Create a backup if file exists
-    if [[  -f "$destination" ]] || [[ -L "$destination" ]]; then
-      mv "$destination" "${destination}.backup"
-    fi
-
-    ln -s  "$file" "$destination"
-    success "Linked $file to $destination"
-  done
-}
-
-success () {
-   printf "\r\033[2K  [ \033[00;32mOK\033[0m ] %s \n" "$1"
-}
-
-fail () {
-  printf "\r\033[2K  [\033[0;31mFAIL\033[0m] %s \n" "$1"
-  echo ''
-  exit
-}
-
 log "Installing/Updating home..."
 
 if ! which ansible-playbook > /dev/null 2>&1 ; then
@@ -52,5 +28,3 @@ fi
   cmd="ansible-playbook -i localhost, --con local playbook.yml"
   $cmd
 )
-
-link_symlinks
