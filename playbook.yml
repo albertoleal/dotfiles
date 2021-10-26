@@ -105,11 +105,13 @@
     - {target: ~/.config/nvim/lua/user/before.lua, src: "{{ansible_env.PWD}}/config/nvim/before.lua"}
     - {target: ~/.config/nvim/lua/user/plugins.lua, src: "{{ansible_env.PWD}}/config/nvim/plugins.lua"}
     - {target: ~/.config/nvim/lua/user/after.lua, src: "{{ansible_env.PWD}}/config/nvim/after.lua"}
+    - {target: ~/.config/nvim/coc-settings.json, src: "{{ansible_env.PWD}}/config/nvim/coc-settings.json"}
     - {target: ~/.tmux.conf, src: "{{ansible_env.PWD}}/config/tmux.conf"}
     - {target: ~/bin/duet, src: "{{ansible_env.PWD}}/functions/duet"}
     - {target: ~/bin/load-key, src: "{{ansible_env.PWD}}/functions/load-key"}
     - {target: ~/bin/solo, src: "{{ansible_env.PWD}}/functions/solo"}
     - {target: ~/bin/take, src: "{{ansible_env.PWD}}/functions/take"}
+    - {target: ~/bin/ssh-pass, src: "{{ansible_env.PWD}}/functions/ssh-pass"}
 
   - name: install oh-my-zsh
     command: bash -c 'wget https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -'
