@@ -1,10 +1,11 @@
 local map = require('utils').map
 local cmd = vim.cmd
 
-cmd[[colorscheme dracula]]
+cmd([[colorscheme dracula]])
 
 -- " Remove trailing spaces on save
 cmd([[autocmd BufWritePre * :%s/\s\+$//e]])
+
 
 -- " Window Splitting and file navigation
 map('n', ',hs', ':split<CR>', {silent = true})

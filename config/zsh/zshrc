@@ -13,7 +13,7 @@ ZSH_THEME="pairing"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git chruby)
+plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -48,3 +48,8 @@ alias up='eval $(startup)'
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
 [ -f /opt/dev/dev.sh ] && source /opt/dev/dev.sh
+if [ -e /Users/aleal/.nix-profile/etc/profile.d/nix.sh ]; then . /Users/aleal/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
+
+[[ -f /opt/dev/sh/chruby/chruby.sh ]] && type chruby >/dev/null 2>&1 || chruby () { source /opt/dev/sh/chruby/chruby.sh; chruby "$@"; }
+
+[[ -x /usr/local/bin/brew ]] && eval $(/usr/local/bin/brew shellenv)
