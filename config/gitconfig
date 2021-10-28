@@ -1,10 +1,13 @@
 [init]
-	templatedir = /Users/aleal/.git-template
+    templatedir = /Users/aleal/.git-template
+
+[include]
+    path = /Users/aleal/.work.gitconfig
 
 [core]
   editor = "nvim"
   pager = "diff-so-fancy | less --tabs=4 -RFX"
-	commitGraph = true
+  commitGraph = true
 
 [interactive]
   diffFilter = "diff-so-fancy --patch"
@@ -24,28 +27,36 @@
   flog = log --pretty=fuller --decorate
 
 [pull]
-	rebase = true
+  rebase = true
 
 [credential]
-	helper =
-	helper = store --file /opt/dev/var/private/git_credential_store
+  helper = store --file /opt/dev/var/private/git_credential_store
 
 [duet "env"]
-	git-author-initials = als
-	git-author-name = Alberto Leal
-	git-author-email = alberto.leal@shopify.com
-	mtime = 1634912344
-	git-committer-initials =
-	git-committer-name =
-	git-committer-email =
+  git-author-initials = al
+  git-author-name = Alberto Leal
+  git-author-email = albertonb@gmail.com
+  mtime = 1635425200
+  git-committer-initials =
+  git-committer-name =
+  git-committer-email =
 
 [user]
-	name = Alberto Leal
-	email = alberto.leal@shopify.com
-	signingkey = 07D37C8306B59EC5
+  name = Alberto Leal
+  email = albertonb@gmail.com
+  signingkey = 07D37C8306B59EC5
 
 [commit]
-	gpgsign = true
+  gpgsign = true
 
 [gpg]
-	program = gpg
+  program = gpg
+
+[diff]
+  algorithm = patience
+
+[gc]
+  writeCommitGraph = true
+
+[protocol]
+  version = 2
