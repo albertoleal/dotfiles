@@ -8,12 +8,11 @@ fi
 
 /usr/bin/ssh-add -D
 
-trap "rm -f key" EXIT
-trap "rm -f password" EXIT
+trap "rm -f ssh-key && rm -f passwd" EXIT
 
-op get item ssh-key --fields notesPlain > key
+op get item ssh-key --fields notesPlain > ssh-key
 op get item ssh-key-password --fields password > passwd
 
-chmod 600 key
+chmod 600 ssh-key
 
-DISPLAY=1 SSH_ASKPASS=ssh-pass ssh-add -t "$HOURS"H key <<< `cat passwd`
+DISPLAY=1 SSH_ASKPASS=ssh-pass ssh-add -t "$HOURS"H ssh-key <<< `cat passwd`
