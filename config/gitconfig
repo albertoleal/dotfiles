@@ -25,25 +25,22 @@
   lola = log --graph --decorate --oneline --all
   ca = commit --amend --reset-author --verbose
   flog = log --pretty=fuller --decorate
+  p = pull --rebase
 
 [pull]
   rebase = true
-
-[credential]
-  helper = store --file /opt/dev/var/private/git_credential_store
-
 [duet "env"]
-  git-author-initials = al
-  git-author-name = Alberto Leal
-  git-author-email = albertonb@gmail.com
-  mtime = 1635425200
-  git-committer-initials =
-  git-committer-name =
-  git-committer-email =
+	git-author-initials = al
+	git-author-name = Alberto Leal
+	git-author-email = albertonb@gmail.com
+	mtime = 1635673157
+	git-committer-initials = 
+	git-committer-name = 
+	git-committer-email = 
 
 [user]
-  name = Alberto Leal
-  email = albertonb@gmail.com
+	name = Alberto Leal
+	email = albertonb@gmail.com
   signingkey = 07D37C8306B59EC5
 
 [commit]
@@ -60,3 +57,6 @@
 
 [protocol]
   version = 2
+[credential]
+	helper =
+	helper = store --file /opt/dev/var/private/git_credential_store
