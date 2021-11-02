@@ -33,3 +33,4 @@ cmd(':command! W w')
 cmd(':command! Q q')
 
 require'lspconfig'.solargraph.setup{}
+require'lspconfig'.sorbet.setup{}
