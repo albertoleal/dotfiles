@@ -11,8 +11,8 @@ map('n', '<Leader>rg', '<ESC>:FZFRg<Space>', { noremap = true, silent = false })
 map('n', '<Leader>rw', '<ESC>:FZFRg <C-R><C-W><enter>', { noremap = true, silent = false })
 
 -- " Split window and file navigation
-map('n', ',hs', ':split<CR>', {silent = true})
-map('n', ',vs', ':vsplit<CR>', {silent = true})
+map('n', '<Leader>hs', ':split<CR>', {silent = true})
+map('n', '<Leader>vs', ':vsplit<CR>', {silent = true})
 map('n', '\\', ':NERDTreeToggle<CR>', {noremap = true, silent = true})
 
 map('n', '<leader><space>', ':Vipe<CR>', {silent = true})
