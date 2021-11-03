@@ -7,6 +7,7 @@ M.plugins = function(use)
   use 'vim-ruby/vim-ruby'
   use 'preservim/nerdtree'
   use 'luan/vipe'
+  use {'ludovicchabant/vim-gutentags'}
   use {
     'neoclide/coc.nvim',
     branch = 'release',
