@@ -4,34 +4,6 @@
   tasks:
   - file: path=~/bin state=directory mode=0755
   - file: path=~/.oh-my-zsh/themes state=directory mode=0755
-  - file: path=~/.config/nvim/lua/user state=directory mode=0755
-
-  - name: symlinks
-    file:
-      path: "{{item.target}}"
-      src: "{{item.src}}"
-      state: link
-      force: yes
-    with_items:
-    - {target: ~/.zshrc, src: "{{ansible_env.PWD}}/config/zsh/zshrc"}
-    - {target: ~/.oh-my-zsh/themes/pairing.zsh-theme, src: "{{ansible_env.PWD}}/config/zsh/pairing.zsh-theme"}
-    - {target: ~/.rubocop.yml, src: "{{ansible_env.PWD}}/config/ruby/rubocop.yml"}
-    - {target: ~/.ruby-version, src: "{{ansible_env.PWD}}/config/ruby/ruby-version"}
-    - {target: ~/.pryrc, src: "{{ansible_env.PWD}}/config/ruby/pryrc"}
-    - {target: ~/.ansible.cfg, src: "{{ansible_env.PWD}}/config/ansible.cfg"}
-    - {target: ~/.aliases, src: "{{ansible_env.PWD}}/config/zsh/aliases"}
-    - {target: ~/.gitconfig, src: "{{ansible_env.PWD}}/config/gitconfig"}
-    - {target: ~/.config/nvim/lua/user/before.lua, src: "{{ansible_env.PWD}}/config/nvim/before.lua"}
-    - {target: ~/.config/nvim/lua/user/plugins.lua, src: "{{ansible_env.PWD}}/config/nvim/plugins.lua"}
-    - {target: ~/.config/nvim/lua/user/after.lua, src: "{{ansible_env.PWD}}/config/nvim/after.lua"}
-    - {target: ~/.config/nvim/coc-settings.json, src: "{{ansible_env.PWD}}/config/nvim/coc-settings.json"}
-    - {target: ~/.tmux.conf, src: "{{ansible_env.PWD}}/config/tmux.conf"}
-    - {target: ~/bin/duet, src: "{{ansible_env.PWD}}/functions/duet"}
-    - {target: ~/bin/load-key, src: "{{ansible_env.PWD}}/functions/load-key"}
-    - {target: ~/bin/solo, src: "{{ansible_env.PWD}}/functions/solo"}
-    - {target: ~/bin/take, src: "{{ansible_env.PWD}}/functions/take"}
-    - {target: ~/bin/ssh-pass, src: "{{ansible_env.PWD}}/functions/ssh-pass"}
-
 
  # Mac OS from here..
   - name: update brew
@@ -167,3 +139,30 @@
 
   - name: install oh-my-zsh
     command: bash -c 'wget https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -'
+
+  - file: path=~/.config/nvim/lua/user state=directory mode=0755
+  - name: symlinks
+    file:
+      path: "{{item.target}}"
+      src: "{{item.src}}"
+      state: link
+      force: yes
+    with_items:
+    - {target: ~/.zshrc, src: "{{ansible_env.PWD}}/config/zsh/zshrc"}
+    - {target: ~/.oh-my-zsh/themes/pairing.zsh-theme, src: "{{ansible_env.PWD}}/config/zsh/pairing.zsh-theme"}
+    - {target: ~/.rubocop.yml, src: "{{ansible_env.PWD}}/config/ruby/rubocop.yml"}
+    - {target: ~/.ruby-version, src: "{{ansible_env.PWD}}/config/ruby/ruby-version"}
+    - {target: ~/.pryrc, src: "{{ansible_env.PWD}}/config/ruby/pryrc"}
+    - {target: ~/.ansible.cfg, src: "{{ansible_env.PWD}}/config/ansible.cfg"}
+    - {target: ~/.aliases, src: "{{ansible_env.PWD}}/config/zsh/aliases"}
+    - {target: ~/.gitconfig, src: "{{ansible_env.PWD}}/config/gitconfig"}
+    - {target: ~/.config/nvim/lua/user/before.lua, src: "{{ansible_env.PWD}}/config/nvim/before.lua"}
+    - {target: ~/.config/nvim/lua/user/plugins.lua, src: "{{ansible_env.PWD}}/config/nvim/plugins.lua"}
+    - {target: ~/.config/nvim/lua/user/after.lua, src: "{{ansible_env.PWD}}/config/nvim/after.lua"}
+    - {target: ~/.config/nvim/coc-settings.json, src: "{{ansible_env.PWD}}/config/nvim/coc-settings.json"}
+    - {target: ~/.tmux.conf, src: "{{ansible_env.PWD}}/config/tmux.conf"}
+    - {target: ~/bin/duet, src: "{{ansible_env.PWD}}/functions/duet"}
+    - {target: ~/bin/load-key, src: "{{ansible_env.PWD}}/functions/load-key"}
+    - {target: ~/bin/solo, src: "{{ansible_env.PWD}}/functions/solo"}
+    - {target: ~/bin/take, src: "{{ansible_env.PWD}}/functions/take"}
+    - {target: ~/bin/ssh-pass, src: "{{ansible_env.PWD}}/functions/ssh-pass"}
