@@ -12,6 +12,8 @@ eval "$(fasd --init auto)"
 alias vim='nvim'
 alias up='eval $(startup)'
 
+alias reload-tmux='tmux source-file ~/.tmux.conf'
+
 # Kubernetes
 alias k='kubectl'
 alias kx='kubectx'
