@@ -5,6 +5,13 @@
   - file: path=~/bin state=directory mode=0755
   - file: path=~/.oh-my-zsh/themes state=directory mode=0755
 
+  - name: ensure file exists
+    copy:
+      content: ""
+      dest: ~/.work.zshrc
+      force: no
+      mode: 0755
+
  # Mac OS from here..
   - name: update brew
     when: ansible_os_family == "Darwin"
