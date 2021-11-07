@@ -138,7 +138,8 @@
       dest: ~/.config/nvim
 
   - name: install oh-my-zsh
-    command: bash -c 'wget https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -'
+    become: true
+    command: sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
   - file: path=~/.config/nvim/lua/user state=directory mode=0755
   - name: symlinks
