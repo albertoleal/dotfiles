@@ -116,10 +116,12 @@
 
   - name: update apt cache
     when: ansible_os_family == "Debian"
+    become: yes
     apt: update-cache=yes
 
   - name: install base dependencies
     when: ansible_os_family == "Debian"
+    become: yes
     apt: pkg={{ item }} state=installed
     with_items:
     - build-essential
