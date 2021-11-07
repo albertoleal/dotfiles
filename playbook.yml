@@ -138,11 +138,11 @@
     - libexpat1-dev
     - libssl-dev
     - neovim
-    - python-apt
-    - python-pip
-    - python-pycurl
-    - python-setuptools
-    - python-software-properties
+    - python3-apt
+    - python3-pip
+    - python3-pycurl
+    - python3-setuptools
+    - python3-software-properties
     - ripgrep
     - tig
     - tree
