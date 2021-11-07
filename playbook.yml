@@ -142,10 +142,6 @@
       repo: https://github.com/luan/nvim
       dest: ~/.config/nvim
 
-  - name: install oh-my-zsh
-    become: true
-    command: sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-
   - file: path=~/.config/nvim/lua/user state=directory mode=0755
   - name: symlinks
     file:
