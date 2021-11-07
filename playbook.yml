@@ -86,6 +86,11 @@
 
 # Linux from here..
 
+  - name: add diff-so-fancy-package
+    become: yes
+    ansible.builtin.apt_repository:
+      repo: 'ppa:aos1/diff-so-fancy'
+
   - name: update apt cache
     when: ansible_os_family == "Debian"
     become: yes
