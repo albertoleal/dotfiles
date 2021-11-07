@@ -16,15 +16,29 @@ install_ansible() {
   brew install ansible
 }
 
+linux_install_ansible() {
+  log "Installing/upgrading Ansible"
+  sudo apt update
+  sudo apt install software-properties-common
+  sudo add-apt-repository --yes --update ppa:ansible/ansible
+  sudo apt install ansible
+}
+
 log "Installing/Updating home..."
 
 if ! which ansible-playbook > /dev/null 2>&1 ; then
   echo "ansible-playbook not found on \$PATH, installing"
-  install_ansible
+
+  if [ "$(uname -s)" == "Darwin" ]; then
+    install_ansible
+  elif [ "$(uname -s)" == "Linux" ]; then
+    linux_install_ansible
+  fi
 fi
 
 (
   cd "$(dirname "$0")"
+
   cmd="ansible-playbook -i localhost, --con local playbook.yml"
   $cmd
 )

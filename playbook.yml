@@ -1,19 +1,67 @@
 ---
 - hosts: all
+
   tasks:
   - file: path=~/bin state=directory mode=0755
   - file: path=~/.oh-my-zsh/themes state=directory mode=0755
 
+  - name: symlinks
+    file:
+      path: "{{item.target}}"
+      src: "{{item.src}}"
+      state: link
+      force: yes
+    with_items:
+    - {target: ~/.zshrc, src: "{{ansible_env.PWD}}/config/zsh/zshrc"}
+    - {target: ~/.oh-my-zsh/themes/pairing.zsh-theme, src: "{{ansible_env.PWD}}/config/zsh/pairing.zsh-theme"}
+    - {target: ~/.rubocop.yml, src: "{{ansible_env.PWD}}/config/ruby/rubocop.yml"}
+    - {target: ~/.ruby-version, src: "{{ansible_env.PWD}}/config/ruby/ruby-version"}
+    - {target: ~/.pryrc, src: "{{ansible_env.PWD}}/config/ruby/pryrc"}
+    - {target: ~/.ansible.cfg, src: "{{ansible_env.PWD}}/config/ansible.cfg"}
+    - {target: ~/.aliases, src: "{{ansible_env.PWD}}/config/zsh/aliases"}
+    - {target: ~/.gitconfig, src: "{{ansible_env.PWD}}/config/gitconfig"}
+    - {target: ~/.config/nvim/lua/user/before.lua, src: "{{ansible_env.PWD}}/config/nvim/before.lua"}
+    - {target: ~/.config/nvim/lua/user/plugins.lua, src: "{{ansible_env.PWD}}/config/nvim/plugins.lua"}
+    - {target: ~/.config/nvim/lua/user/after.lua, src: "{{ansible_env.PWD}}/config/nvim/after.lua"}
+    - {target: ~/.config/nvim/coc-settings.json, src: "{{ansible_env.PWD}}/config/nvim/coc-settings.json"}
+    - {target: ~/.tmux.conf, src: "{{ansible_env.PWD}}/config/tmux.conf"}
+    - {target: ~/bin/duet, src: "{{ansible_env.PWD}}/functions/duet"}
+    - {target: ~/bin/load-key, src: "{{ansible_env.PWD}}/functions/load-key"}
+    - {target: ~/bin/solo, src: "{{ansible_env.PWD}}/functions/solo"}
+    - {target: ~/bin/take, src: "{{ansible_env.PWD}}/functions/take"}
+    - {target: ~/bin/ssh-pass, src: "{{ansible_env.PWD}}/functions/ssh-pass"}
+
+  - name: get Tmux Plugin Manager
+    git:
+      repo: https://github.com/tmux-plugins/tpm
+      dest: ~/.tmux/plugins/tpm
+
+  - name: install support for nvim
+    command: pip3 install --user --upgrade pynvim
+
+  - name: install nvim distribution
+    git:
+      repo: https://github.com/luan/nvim
+      dest: ~/.config/nvim
+
+  - name: install oh-my-zsh
+    command: bash -c 'wget https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -'
+
+
+ # Mac OS from here..
   - name: update brew
+    when: ansible_os_family == "Darwin"
     homebrew: update_homebrew=yes
 
   - name: add Homebrew taps
+    when: ansible_os_family == "Darwin"
     homebrew_tap: name={{item}}
     with_items:
     - homebrew/cask-fonts
     - git-duet/tap
 
   - name: install Homebrew casks
+    when: ansible_os_family == "Darwin"
     homebrew_cask: name={{item}} install_options=appdir=/Applications
     with_items:
     - alfred
@@ -30,6 +78,7 @@
     - visual-studio-code
 
   - name: install Homebrew packages
+    when: ansible_os_family == "Darwin"
     homebrew:
       name: "{{item.name}}"
       install_options: "{{item.install_options}}"
@@ -75,44 +124,38 @@
     - {name: yarn, install_options: ''}
     - {name: yq, install_options: ''}
 
-  - name: get TPM
-    git:
-      repo: https://github.com/tmux-plugins/tpm
-      dest: ~/.tmux/plugins/tpm
 
-  - name: install python support for nvim
-    command: pip3 install --user --upgrade pynvim
+ # Linux from here..
 
-  - name: install Luan's Neovim distribution
-    git:
-      repo: https://github.com/luan/nvim
-      dest: ~/.config/nvim
+  - name: update apt cache
+    when: ansible_os_family == "Debian"
+    apt: update-cache=yes
 
-  - name: set up symlinks
-    file:
-      path: "{{item.target}}"
-      src: "{{item.src}}"
-      state: link
-      force: yes
+  - name: install base dependencies
+    when: ansible_os_family == "Debian"
+    apt: pkg={{ item }} state=installed
     with_items:
-    - {target: ~/.zshrc, src: "{{ansible_env.PWD}}/config/zsh/zshrc"}
-    - {target: ~/.oh-my-zsh/themes/pairing.zsh-theme, src: "{{ansible_env.PWD}}/config/zsh/pairing.zsh-theme"}
-    - {target: ~/.rubocop.yml, src: "{{ansible_env.PWD}}/config/ruby/rubocop.yml"}
-    - {target: ~/.ruby-version, src: "{{ansible_env.PWD}}/config/ruby/ruby-version"}
-    - {target: ~/.pryrc, src: "{{ansible_env.PWD}}/config/ruby/pryrc"}
-    - {target: ~/.ansible.cfg, src: "{{ansible_env.PWD}}/config/ansible.cfg"}
-    - {target: ~/.aliases, src: "{{ansible_env.PWD}}/config/zsh/aliases"}
-    - {target: ~/.gitconfig, src: "{{ansible_env.PWD}}/config/gitconfig"}
-    - {target: ~/.config/nvim/lua/user/before.lua, src: "{{ansible_env.PWD}}/config/nvim/before.lua"}
-    - {target: ~/.config/nvim/lua/user/plugins.lua, src: "{{ansible_env.PWD}}/config/nvim/plugins.lua"}
-    - {target: ~/.config/nvim/lua/user/after.lua, src: "{{ansible_env.PWD}}/config/nvim/after.lua"}
-    - {target: ~/.config/nvim/coc-settings.json, src: "{{ansible_env.PWD}}/config/nvim/coc-settings.json"}
-    - {target: ~/.tmux.conf, src: "{{ansible_env.PWD}}/config/tmux.conf"}
-    - {target: ~/bin/duet, src: "{{ansible_env.PWD}}/functions/duet"}
-    - {target: ~/bin/load-key, src: "{{ansible_env.PWD}}/functions/load-key"}
-    - {target: ~/bin/solo, src: "{{ansible_env.PWD}}/functions/solo"}
-    - {target: ~/bin/take, src: "{{ansible_env.PWD}}/functions/take"}
-    - {target: ~/bin/ssh-pass, src: "{{ansible_env.PWD}}/functions/ssh-pass"}
-
-  - name: install oh-my-zsh
-    command: bash -c 'wget https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -'
+    - build-essential
+    - ctags
+    - curl
+    - direnv
+    - fasd
+    - fzf
+    - git-core
+    - git-extras
+    - glances
+    - htop
+    - jq
+    - libexpat1-dev
+    - libssl-dev
+    - neovim
+    - python-apt
+    - python-pip
+    - python-pycurl
+    - python-setuptools
+    - python-software-properties
+    - ripgrep
+    - tig
+    - tree
+    - watch
+    - yarn
