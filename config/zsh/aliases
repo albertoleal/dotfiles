@@ -12,6 +12,7 @@ eval "$(fasd --init auto)"
 alias vim='nvim'
 alias up='eval $(startup)'
 
+alias reload='source ~/.zshrc'
 alias reload-tmux='tmux source-file ~/.tmux.conf'
 
 # Kubernetes
@@ -19,10 +20,12 @@ alias k='kubectl'
 alias kx='kubectx'
 
 # Ruby
-alias d='dev'
-alias dc='dev cd'
 alias ds='dev server'
 alias dt='dev test'
 alias bi='bundle install'
 alias sinit='srb init'
 alias stc='srb tc'
+
+# Docker
+alias dc='docker-compose'
+alias dr='docker run'
