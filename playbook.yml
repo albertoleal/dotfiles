@@ -22,7 +22,6 @@
     homebrew_tap: name={{item}}
     with_items:
     - homebrew/cask-fonts
-    - git-duet/tap
 
   - name: install Homebrew casks
     when: ansible_os_family == "Darwin"
@@ -58,7 +57,6 @@
     - {name: fzf, install_options: ''}
     - {name: gcc, install_options: ''}
     - {name: git, install_options: ''}
-    - {name: git-duet, install_options: ''}
     - {name: git-extras, install_options: ''}
     - {name: glances, install_options: ''}
     - {name: go, install_options: ''}
@@ -94,6 +92,7 @@
 # Linux from here..
 
   - name: add diff-so-fancy-package
+    when: ansible_os_family == "Debian"
     become: yes
     ansible.builtin.apt_repository:
       repo: 'ppa:aos1/diff-so-fancy'
@@ -170,7 +169,6 @@
     - {target: ~/.config/nvim/lua/user/after.lua, src: "{{ansible_env.PWD}}/config/nvim/after.lua"}
     - {target: ~/.config/nvim/coc-settings.json, src: "{{ansible_env.PWD}}/config/nvim/coc-settings.json"}
     - {target: ~/.tmux.conf, src: "{{ansible_env.PWD}}/config/tmux.conf"}
-    - {target: ~/bin/duet, src: "{{ansible_env.PWD}}/functions/duet"}
     - {target: ~/bin/load-key, src: "{{ansible_env.PWD}}/functions/load-key"}
     - {target: ~/bin/solo, src: "{{ansible_env.PWD}}/functions/solo"}
     - {target: ~/bin/take, src: "{{ansible_env.PWD}}/functions/take"}
