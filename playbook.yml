@@ -149,8 +149,13 @@
     - watch
     - yarn
 
-# Linux end here.
+  - name: install bat
+    when: ansible_os_family == "Debian"
+    become: yes
+    apt:
+      deb: "https://github.com/sharkdp/bat/releases/download/v0.18.3/bat_0.18.3_amd64.deb"
 
+# Linux end here.
 
   - name: get Tmux Plugin Manager
     git:
