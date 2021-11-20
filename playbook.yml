@@ -2,9 +2,18 @@
 - hosts: all
 
   tasks:
+  - name: Ansible check ohmyzsh exists
+    stat:
+      path: ~/.oh-my-zsh
+    register: ohmyzsh_details
+
+  - name: install oh-my-zsh
+    command: curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh | sh -s -- -y
+    when: not ohmyzsh_details.stat.exists
+
   - name: install oh-my-zsh
     ansible.builtin.shell:
-      cmd: [ ! -d ~/.oh-my-zsh ] && curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh | sh -s -- -y
+      cmd: curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh | sh -s -- -y
 
   - file: path=~/bin state=directory mode=0755
   - file: path=~/.oh-my-zsh/themes state=directory mode=0755
