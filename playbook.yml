@@ -101,6 +101,12 @@
     ansible.builtin.apt_repository:
       repo: 'ppa:aos1/diff-so-fancy'
 
+  - name: neovim-package
+    when: ansible_os_family == "Debian"
+    become: yes
+    ansible.builtin.apt_repository:
+      repo: 'ppa:neovim-ppa/stable'
+
   - name: update apt cache
     when: ansible_os_family == "Debian"
     become: yes
