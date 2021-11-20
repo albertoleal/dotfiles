@@ -134,6 +134,9 @@
 
 # Linux end here.
 
+  - name: install oh-my-zsh
+    become: true
+    command: sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
   - name: get Tmux Plugin Manager
     git:
