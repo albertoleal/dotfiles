@@ -132,11 +132,14 @@
     - watch
     - yarn
 
+  - name: install oh-my-zsh
+    when: ansible_os_family == "Debian"
+    become: true
+    ansible.builtin.shell:
+      cmd: curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh | sh -s -- -y
+
 # Linux end here.
 
-  - name: install oh-my-zsh
-    become: true
-    command: sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
   - name: get Tmux Plugin Manager
     git:
