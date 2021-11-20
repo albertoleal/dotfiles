@@ -122,6 +122,7 @@
     - curl
     - direnv
     - fasd
+    - fd-find
     - fzf
     - git-core
     - git-extras
