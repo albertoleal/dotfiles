@@ -2,6 +2,10 @@
 - hosts: all
 
   tasks:
+  - name: install oh-my-zsh
+    ansible.builtin.shell:
+      cmd: curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh | sh -s -- -y
+
   - file: path=~/bin state=directory mode=0755
   - file: path=~/.oh-my-zsh/themes state=directory mode=0755
 
@@ -131,12 +135,6 @@
     - tree
     - watch
     - yarn
-
-  - name: install oh-my-zsh
-    when: ansible_os_family == "Debian"
-    become: true
-    ansible.builtin.shell:
-      cmd: curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh | sh -s -- -y
 
 # Linux end here.
 
