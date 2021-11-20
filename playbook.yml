@@ -120,6 +120,7 @@
     - build-essential
     - ctags
     - curl
+    - diff-so-fancy
     - direnv
     - fasd
     - fd-find
