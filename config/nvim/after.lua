@@ -17,7 +17,6 @@ cmd(':command! W w')
 cmd(':command! Q q')
 
 
-
 -- " Mappings
 -- " Search under word
 map('n', '<Leader>rg', '<ESC>:FZFRg<Space>', { noremap = true, silent = false })
@@ -27,6 +26,7 @@ map('n', '<Leader>rw', '<ESC>:FZFRg <C-R><C-W><enter>', { noremap = true, silent
 map('n', '<Leader>hh', ':split<CR>', {silent = true})
 map('n', '<Leader>vv', ':vsplit<CR>', {silent = true})
 map('n', '\\', ':NERDTreeToggle<CR>', {noremap = true, silent = true})
+map('n', '\\f', ':NERDTreeFind<CR>', {noremap = true, silent = true})
 
 map('n', '<leader><space>', ':Vipe<CR>', {silent = true})
 
