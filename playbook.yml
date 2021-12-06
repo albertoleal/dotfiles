@@ -8,7 +8,8 @@
     register: ohmyzsh_details
 
   - name: install oh-my-zsh
-    command: curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh | sh -s -- -y
+    ansible.builtin.shell:
+      cmd: sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
     when: not ohmyzsh_details.stat.exists
 
   - file: path=~/bin state=directory mode=0755

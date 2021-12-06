@@ -12,7 +12,7 @@ My precious.
 
 - Run `:UpdateRemotePlugins`
 - Run `:checkhealth`
-- Run `:PlugInstall`
+- Run `:PackerInstall`
 - npm install -g livedown
 - ln -s $HOME/.local/share/nvim/site/pack/packer/start/vipe $HOME/bin
 
