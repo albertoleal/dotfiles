@@ -9,8 +9,6 @@ My precious.
 - Run `ctrl-space + I`
 
 ### NVIM
-
-- Run `:UpdateRemotePlugins`
 - Run `:checkhealth`
 - Run `:PackerInstall`
 - npm install -g livedown
