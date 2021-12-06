@@ -37,7 +37,6 @@
     homebrew_cask: name={{item}} install_options=appdir=/Applications
     with_items:
     - alfred
-    - flycut
     - fellow
     - font-inconsolata
     - font-inconsolata-nerd-font
