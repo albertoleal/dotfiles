@@ -104,6 +104,7 @@
     when: ansible_os_family == "Debian"
     become: yes
     ansible.builtin.apt_repository:
+      codename: focal
       repo: 'ppa:aos1/diff-so-fancy'
 
   - name: neovim-package
