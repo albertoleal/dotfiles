@@ -29,3 +29,6 @@ alias stc='srb tc'
 # Docker
 alias dc='docker-compose'
 alias dr='docker run'
+
+alias jc='journalctl'
+alias sc='systemctl'
