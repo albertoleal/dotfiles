@@ -39,6 +39,6 @@ fi
 (
   cd "$(dirname "$0")"
 
-  cmd="ansible-playbook -i localhost, --con local playbook.yml"
+  cmd="ansible-playbook --inventory localhost, --connection local playbook.yml"
   $cmd
 )
