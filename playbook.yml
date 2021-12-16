@@ -124,7 +124,7 @@
     apt: pkg={{ item }} state=latest
     with_items:
     - build-essential
-    - ctags
+    - universal-ctags
     - curl
     - diff-so-fancy
     - direnv
