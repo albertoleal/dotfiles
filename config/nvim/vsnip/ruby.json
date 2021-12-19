@@ -1,0 +1,81 @@
+{
+  "Test": {
+    "prefix": [
+      "test"
+    ],
+    "body": [
+      "test '$1' do",
+      "\t$2",
+      "end"
+    ],
+    "description": "Add a test case"
+  },
+  "ImportPry": {
+    "prefix": [
+      "pry"
+    ],
+    "body": [
+      "require 'pry'",
+      "require 'pry-nav'"
+    ],
+    "description": "Import pry and pry-nav"
+  },
+  "BindingPry": {
+    "prefix": [
+      "bp"
+    ],
+    "body": [
+      "binding.pry"
+    ],
+    "description": "binding.pry"
+  },
+  "Frozen String Literal": {
+    "prefix": [
+      "fsl"
+    ],
+    "body": [
+      "# frozen_string_literal: true"
+    ],
+    "description": "Add frozen_string_literal tag"
+  },
+  "group :development": {
+    "prefix": [
+      "gdev"
+    ],
+    "body": [
+      "group :development do",
+      "\t$0",
+      "end"
+    ],
+    "description": "Add group dev"
+  },
+  "group :test": {
+    "prefix": [
+      "gtest"
+    ],
+    "body": [
+      "group :test do",
+      "\t$0",
+      "end"
+    ],
+    "description": "Add group test"
+  },
+  "sigp": {
+    "prefix": [
+      "sigp"
+    ],
+    "body": [
+      "sig {params($1: $2).returns($3)}"
+    ],
+    "description": "Add Method Signatures with parameter"
+  },
+  "sig": {
+    "prefix": [
+      "sig"
+    ],
+    "body": [
+      "sig {returns($1)}"
+    ],
+    "description": "Add Method Signatures"
+  }
+}
