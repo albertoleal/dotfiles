@@ -54,3 +54,6 @@ defaults write com.apple.finder ShowPathbar -bool true
 
 # Keyboard: Use F's
 defaults write -g com.apple.keyboard.fnState -bool true
+
+# Touch bar :P
+defaults write com.apple.touchbar.agent PresentationModeGlobal fullControlStrip && pkill "Touch Bar agent"; killall "ControlStrip";
