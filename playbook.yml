@@ -140,6 +140,8 @@
     - libexpat1-dev
     - libssl-dev
     - neovim
+    - nodejs
+    - npm
     - python3-apt
     - python3-pip
     - python3-pycurl
