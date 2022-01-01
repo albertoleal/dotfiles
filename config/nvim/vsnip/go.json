@@ -9,6 +9,11 @@
       "prefix": "struct",
       "body": "type ${1:name} struct {\n\t$0\n}",
       "description": "Snippet for a struct declaration"
+    },
+    "printf for debug": {
+      "prefix": "ff",
+      "body": "fmt.Printf(\"${1:var}: %+v\",$1)",
+      "description": "Printf for debug purposes"
     }
   }
 }
