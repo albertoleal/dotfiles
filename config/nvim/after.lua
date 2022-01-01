@@ -96,3 +96,4 @@ vim.g.gutentags_ctags_extra_args = {'--tag-relative=yes', '--fields=+ailmnS', }
 
 require'lspconfig'.solargraph.setup{}
 require'lspconfig'.sorbet.setup{}
+require'lspconfig'.gopls.setup{}
