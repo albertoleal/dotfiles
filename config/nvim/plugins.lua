@@ -4,6 +4,8 @@ local M = {}
 M.plugins = function(use)
   use {'dracula/vim', as = 'dracula'}
 
+  use {'fatih/vim-go', cmd = 'GoUpdateBinaries' }
+  use 'golang/vscode-go'
   use 'simeji/winresizer'
   use 'vim-ruby/vim-ruby'
   use 'preservim/nerdtree'
