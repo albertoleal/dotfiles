@@ -1,0 +1,14 @@
+{
+  ".source.go": {
+    "type interface declaraion": {
+      "prefix": "interface",
+      "body": "type ${1:name} interface {\n\t$0\n}",
+      "description": "Snippet for a type interface"
+    },
+    "type struct declaration": {
+      "prefix": "struct",
+      "body": "type ${1:name} struct {\n\t$0\n}",
+      "description": "Snippet for a struct declaration"
+    }
+  }
+}
