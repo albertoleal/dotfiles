@@ -1,7 +1,6 @@
 {
   "coc.preferences.messageLevel": "error",
   "diagnostic.enable": true,
-  "diagnostic.displayByAle": true,
   "coc.preferences.formatOnSaveFiletypes": [
     "c",
     "cpp",
@@ -13,7 +12,6 @@
     "ruby",
     "typescript",
   ],
-  "python.formatting.provider": "black",
   "solargraph.completion": true,
   "solargraph.formatting": true,
   "solargraph.hover": true,
@@ -23,14 +21,8 @@
   "solargraph.references": true,
   "suggest.enablePreselect": false,
   "yaml.validate": false,
-  "go.goplsOptions": {
-    "completeUnimported": true
-  },
   "go.goplsPath": "gopls",
   "go.goplsArgs": [
     "-remote=auto"
-  ],
-  "go.disable": {
-    "workspaceFolder": true
-  }
+  ]
 }
