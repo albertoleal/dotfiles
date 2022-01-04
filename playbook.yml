@@ -14,7 +14,7 @@
 
   - file: path=~/bin state=directory mode=0755
   - file: path=~/.oh-my-zsh/themes state=directory mode=0755
-  - file: path=~/.vsnip state=directory mode=0755  
+  - file: path=~/.vsnip state=directory mode=0755
 
   - name: ensure file exists
     copy:
@@ -129,6 +129,8 @@
     - curl
     - diff-so-fancy
     - direnv
+    - docker.io
+    - docker-compose
     - fasd
     - fd-find
     - fzf
