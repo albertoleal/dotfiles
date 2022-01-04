@@ -66,6 +66,7 @@
     - {name: fd, install_options: ''}
     - {name: fzf, install_options: ''}
     - {name: gcc, install_options: ''}
+    - {name: gh, install_options: ''}
     - {name: git, install_options: ''}
     - {name: git-extras, install_options: ''}
     - {name: glances, install_options: ''}
