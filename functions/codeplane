@@ -1,0 +1,54 @@
+#!/bin/bash -e
+
+[[ -z "$DEBUG" ]] || set -x
+
+usage() {
+  echo "usage: codeplane COMMAND"
+  echo
+  echo "where COMMAND may be:"
+  echo "load-key             -- loads ssh key and adds it to the agent"
+  echo "take-off             -- leaves the ground and begins to fly"
+}
+
+main() {
+  local command
+
+  if [[ -z $1 ]]; then
+    usage
+  fi
+
+  command="$1"
+  shift
+
+  case $command in
+    load-key )
+      load-key "$@"
+      ;;
+
+    take-off )
+      take-off
+      ;;
+  esac
+}
+
+load-key() {
+  local ttl
+  ttl="${1:-1}"
+
+  /usr/bin/ssh-add -D
+  trap "rm -f key" EXIT
+
+  lpass show "git-stuff/codeplane" --notes > key
+  chmod 600 key
+  ssh-add -t "$ttl"H key
+}
+
+take-off() {
+  local address
+  address="$(lpass show "git-stuff/codeplane" --username)"
+
+  ssh "$address"
+}
+
+main "$@"
+

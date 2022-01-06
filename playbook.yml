@@ -204,3 +204,4 @@
     - {target: ~/bin/solo, src: "{{ansible_env.PWD}}/functions/solo"}
     - {target: ~/bin/take, src: "{{ansible_env.PWD}}/functions/take"}
     - {target: ~/bin/ssh-pass, src: "{{ansible_env.PWD}}/functions/ssh-pass"}
+    - {target: ~/bin/codeplane, src: "{{ansible_env.PWD}}/functions/codeplane"}
