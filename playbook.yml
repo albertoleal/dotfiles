@@ -33,6 +33,7 @@
     homebrew_tap: name={{item}}
     with_items:
     - homebrew/cask-fonts
+    - git-duet/tap
 
   - name: install Homebrew casks
     when: ansible_os_family == "Darwin"
@@ -68,6 +69,7 @@
     - {name: gcc, install_options: ''}
     - {name: gh, install_options: ''}
     - {name: git, install_options: ''}
+    - {name: git-duet, install_options: ''}
     - {name: git-extras, install_options: ''}
     - {name: glances, install_options: ''}
     - {name: go, install_options: ''}
@@ -201,6 +203,7 @@
     - {target: ~/.vsnip/go.json, src: "{{ansible_env.PWD}}/config/nvim/vsnip/go.json"}
     - {target: ~/.tmux.conf, src: "{{ansible_env.PWD}}/config/tmux.conf"}
     - {target: ~/bin/load-key, src: "{{ansible_env.PWD}}/functions/load-key"}
+    - {target: ~/bin/duet, src: "{{ansible_env.PWD}}/functions/duet"}
     - {target: ~/bin/solo, src: "{{ansible_env.PWD}}/functions/solo"}
     - {target: ~/bin/take, src: "{{ansible_env.PWD}}/functions/take"}
     - {target: ~/bin/ssh-pass, src: "{{ansible_env.PWD}}/functions/ssh-pass"}
