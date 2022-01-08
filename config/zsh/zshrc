@@ -31,6 +31,10 @@ export GIT_DUET_GLOBAL=true
 export GIT_DUET_ROTATE_AUTHOR=1
 export GIT_DUET_CO_AUTHORED_BY=1
 
+
+export HOMEBREW_NO_ENV_HINTS=1
+export HOMEBREW_NO_EMOJI=1
+
 export GPG_TTY=$(tty)
 
 # source /usr/local/opt/chruby/share/chruby/chruby.sh
