@@ -1,0 +1,14 @@
+#!/bin/bash -e
+
+# Only for OS X.
+if [[ "Darwin" -ne $(uname) ]]
+then
+  echo "Skipping Homebrew upgrade step."
+  exit 0
+fi
+
+brew update
+brew upgrade
+
+brew cleanup -s --prune 5
+brew services cleanup
