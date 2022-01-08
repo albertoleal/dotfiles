@@ -3,7 +3,7 @@
 # Only for OS X.
 if [[ "Darwin" -ne $(uname) ]]
 then
-  echo "Skipping Homebrew step because it's now OS X."
+  echo "Skipping Homebrew step."
   exit 0
 fi
 
