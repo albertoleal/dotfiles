@@ -85,6 +85,7 @@
     - {name: node, install_options: ''}
     - {name: openssl, install_options: ''}
     - {name: pcre, install_options: ''}
+    - {name: pinentry-mac, install_options: ''}
     - {name: pstree, install_options: ''}
     - {name: ripgrep, install_options: ''}
     - {name: ruby-install, install_options: ''}
