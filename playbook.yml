@@ -15,6 +15,7 @@
   - file: path=~/bin state=directory mode=0755
   - file: path=~/.oh-my-zsh/themes state=directory mode=0755
   - file: path=~/.vsnip state=directory mode=0755
+  - file: path=~/.gnupg state=directory mode=0700
 
   - name: ensure file exists
     copy:
@@ -45,7 +46,6 @@
     - font-inconsolata-nerd-font
     - font-meslo-lg-nerd-font
     - google-cloud-sdk
-    - istat-menus
     - ngrok
     - rectangle
     - tuple
@@ -71,6 +71,7 @@
     - {name: git, install_options: ''}
     - {name: git-duet, install_options: ''}
     - {name: git-extras, install_options: ''}
+    - {name: gnu-sed, install_options: ''}
     - {name: glances, install_options: ''}
     - {name: go, install_options: ''}
     - {name: htop, install_options: ''}
@@ -166,6 +167,9 @@
       deb: "https://github.com/sharkdp/bat/releases/download/v0.18.3/bat_0.18.3_amd64.deb"
 
 # Linux end here.
+
+  - name: configures gpg and pinentry
+    command: echo "pinentry-program $(brew --prefix)/bin/pinentry-mac" | tee ~/.gnupg/gpg-agent.conf
 
   - name: get Tmux Plugin Manager
     git:

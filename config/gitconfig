@@ -41,7 +41,7 @@
 [user]
 	name = Alberto Leal
 	email = albertonb@gmail.com
-	signingkey = 399CE6919EFC1984
+	signingkey = 07D37C8306B59EC5
 
 [commit]
   gpgsign = true
