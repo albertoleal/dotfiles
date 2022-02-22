@@ -23,7 +23,7 @@ source $ZSH/oh-my-zsh.sh
 # User configuration
 export EDITOR=nvim
 
-export PATH=$HOME/bin:/usr/local/bin:/usr/local/share/chruby:$PATH
+export PATH=/usr/local/share/chruby:$HOME/bin:/usr/local/bin:$PATH
 export GOPATH=$HOME/workspace
 export PATH=$GOPATH/bin:$PATH
 
@@ -37,8 +37,8 @@ export HOMEBREW_NO_EMOJI=1
 
 export GPG_TTY=$(tty)
 
-# source /usr/local/opt/chruby/share/chruby/chruby.sh
-# source /usr/local/opt/chruby/share/chruby/auto.sh
+source /opt/homebrew/opt/chruby/share/chruby/chruby.sh
+source /opt/homebrew/opt/chruby/share/chruby/auto.sh
 
 eval "$(direnv hook zsh)"
 
@@ -50,5 +50,3 @@ if [ -e /Users/aleal/.nix-profile/etc/profile.d/nix.sh ]; then . /Users/aleal/.n
 
 [[ -x /opt/homebrew/bin/brew ]] && eval $(/opt/homebrew/bin/brew shellenv)
 
-source /opt/homebrew/opt/chruby/share/chruby/chruby.sh
-source /opt/homebrew/opt/chruby/share/chruby/auto.sh
