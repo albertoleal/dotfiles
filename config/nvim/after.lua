@@ -95,5 +95,5 @@ vim.cmd([[command! -nargs=0 GutentagsClearCache call system('rm ' . g:gutentags_
 vim.g.gutentags_ctags_extra_args = {'--tag-relative=yes', '--fields=+ailmnS', }
 
 require'lspconfig'.solargraph.setup{}
-require'lspconfig'.sorbet.setup{}
+require'lspconfig'.sorbet.setup{cmd = { 'srb', 'tc', '--lsp' ,'.'}}
 require'lspconfig'.gopls.setup{}
