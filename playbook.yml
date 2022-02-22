@@ -214,3 +214,4 @@
     - {target: ~/bin/ssh-pass, src: "{{ansible_env.PWD}}/functions/ssh-pass"}
     - {target: ~/bin/codeplane, src: "{{ansible_env.PWD}}/functions/codeplane"}
     - {target: ~/bin/upgrade, src: "{{ansible_env.PWD}}/functions/upgrade"}
+    - {target: ~/bin/vipe, src: "{{ansible_env.PWD}}/functions/vipe"}
