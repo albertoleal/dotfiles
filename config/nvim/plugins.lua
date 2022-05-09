@@ -9,6 +9,7 @@ M.plugins = function(use)
   use 'preservim/nerdtree'
   use 'luan/vipe'
   use 'ludovicchabant/vim-gutentags'
+  use 'shime/vim-livedown'
   use {
     'neoclide/coc.nvim',
     branch = 'release',
