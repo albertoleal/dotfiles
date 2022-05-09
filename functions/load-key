@@ -10,8 +10,8 @@ fi
 
 trap "rm -f ssh-key && rm -f passwd" EXIT
 
-op get item ssh-key --fields notesPlain > ssh-key
-op get item ssh-key-password --fields password > passwd
+op item get ssh-key --fields notesPlain --format=json | jq -r .value > ssh-key
+op item get ssh-key-password --fields password  --format=json | jq -r .value > passwd
 
 chmod 600 ssh-key
 
