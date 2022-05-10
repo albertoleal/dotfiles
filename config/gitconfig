@@ -29,19 +29,6 @@
 
 [pull]
   rebase = true
-[duet "env"]
-	git-author-initials = al
-	git-author-name = Alberto Leal
-	git-author-email = albertonb@gmail.com
-	mtime = 1635673157
-	git-committer-initials = 
-	git-committer-name = 
-	git-committer-email = 
-
-[user]
-	name = Alberto Leal
-	email = albertonb@gmail.com
-	signingkey = 07D37C8306B59EC5
 
 [commit]
   gpgsign = true
