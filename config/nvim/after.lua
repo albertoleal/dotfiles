@@ -1,4 +1,3 @@
-local map = require('utils').map
 local cmd = vim.cmd
 
 -- " Commands
@@ -19,22 +18,21 @@ cmd(':command! Q q')
 
 -- " Mappings
 -- " Search under word
-map('n', '<Leader>rg', '<ESC>:FZFRg<Space>', { noremap = true, silent = false })
-map('n', '<Leader>rw', '<ESC>:FZFRg <C-R><C-W><enter>', { noremap = true, silent = false })
+vim.keymap.set('n', '<Leader>rg', '<ESC>:FZFRg <C-R><C-W><enter>', { noremap = true, silent = false })
 
 -- " Split window and file navigation
-map('n', '<Leader>hh', ':split<CR>', {silent = true})
-map('n', '<Leader>vv', ':vsplit<CR>', {silent = true})
-map('n', '\\', ':NERDTreeToggle<CR>', {noremap = true, silent = true})
-map('n', '\\f', ':NERDTreeFind<CR>', {noremap = true, silent = true})
+vim.keymap.set('n', '<Leader>hh', ':split<CR>', {silent = true})
+vim.keymap.set('n', '<Leader>vv', ':vsplit<CR>', {silent = true})
+vim.keymap.set('n', '\\', ':NERDTreeToggle<CR>', {noremap = true, silent = true})
+vim.keymap.set('n', '\\f', ':NERDTreeFind<CR>', {noremap = true, silent = true})
 
-map('n', '<leader><space>', ':Vipe<CR>', {silent = true})
+vim.keymap.set('n', '<leader><space>', ':Vipe<CR>', {silent = true})
 
 -- " Switch between test and production code
-map('n', '<Leader>.', ':A<CR>',{})
+vim.keymap.set('n', '<Leader>.', ':A<CR>',{})
 
 -- " Open nvim help
-map( "n", ",h", [[<Cmd>lua require'telescope.builtin'.help_tags({results_title='Help Results'})<CR>]], { noremap = true, silent = true })
+vim.keymap.set( "n", ",h", [[<Cmd>lua require'telescope.builtin'.help_tags({results_title='Help Results'})<CR>]], { noremap = true, silent = true })
 
 
 
