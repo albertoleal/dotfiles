@@ -3,11 +3,11 @@
 
 [include]
     path = /Users/aleal/.work.gitconfig
+	path = /Users/aleal/.config/dev/gitconfig
 
 [core]
   editor = "nvim"
   pager = "diff-so-fancy | less --tabs=4 -RFX"
-  commitGraph = true
 
 [interactive]
   diffFilter = "diff-so-fancy --patch"
@@ -35,15 +35,3 @@
 
 [gpg]
   program = gpg
-
-[diff]
-  algorithm = patience
-
-[gc]
-  writeCommitGraph = true
-
-[protocol]
-  version = 2
-[credential]
-	helper =
-	helper = store --file /opt/dev/var/private/git_credential_store
