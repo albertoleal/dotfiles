@@ -2,10 +2,9 @@ local M = {}
 
 
 M.plugins = function(use)
-  use {'dracula/vim', as = 'dracula'}
+  use { 'dracula/vim', as = 'dracula' }
 
   use 'simeji/winresizer'
-  use 'vim-ruby/vim-ruby'
   use 'preservim/nerdtree'
   use 'luan/vipe'
   use 'ludovicchabant/vim-gutentags'
@@ -20,5 +19,3 @@ M.plugins = function(use)
 end
 
 return M
-
-
