@@ -200,6 +200,7 @@
     - {target: ~/.ansible.cfg, src: "{{ansible_env.PWD}}/config/ansible.cfg"}
     - {target: ~/.aliases, src: "{{ansible_env.PWD}}/config/zsh/aliases"}
     - {target: ~/.gitconfig, src: "{{ansible_env.PWD}}/config/gitconfig"}
+    - {target: ~/.irbrc, src: "{{ansible_env.PWD}}/config/irbrc"}
     - {target: ~/.config/nvim/lua/user/before.lua, src: "{{ansible_env.PWD}}/config/nvim/before.lua"}
     - {target: ~/.config/nvim/lua/user/plugins.lua, src: "{{ansible_env.PWD}}/config/nvim/plugins.lua"}
     - {target: ~/.config/nvim/lua/user/after.lua, src: "{{ansible_env.PWD}}/config/nvim/after.lua"}
