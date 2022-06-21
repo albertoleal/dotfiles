@@ -3,7 +3,7 @@
 
 [include]
     path = /Users/aleal/.work.gitconfig
-	path = /Users/aleal/.config/dev/gitconfig
+    path = /Users/aleal/.personal.gitconfig
 
 [core]
   editor = "nvim"
@@ -35,3 +35,6 @@
 
 [gpg]
   program = gpg
+[user]
+	name = Alberto Leal
+	email = albertonb@gmail.com
