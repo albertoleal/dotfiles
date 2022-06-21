@@ -193,6 +193,7 @@
       force: yes
     with_items:
     - {target: ~/.zshrc, src: "{{ansible_env.PWD}}/config/zsh/zshrc"}
+    - {target: ~/.zlogin, src: "{{ansible_env.PWD}}/config/zsh/zlogin"}
     - {target: ~/.oh-my-zsh/themes/pairing.zsh-theme, src: "{{ansible_env.PWD}}/config/zsh/pairing.zsh-theme"}
     - {target: ~/.rubocop.yml, src: "{{ansible_env.PWD}}/config/ruby/rubocop.yml"}
     - {target: ~/.ruby-version, src: "{{ansible_env.PWD}}/config/ruby/ruby-version"}
