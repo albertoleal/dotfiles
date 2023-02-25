@@ -181,7 +181,7 @@
 
   - name: install nvim distribution
     git:
-      repo: https://github.com/luan/nvim
+      repo: https://github.com/albertoleal/nvim
       dest: ~/.config/nvim
 
   - file: path=~/.config/nvim/lua/user state=directory mode=0755
