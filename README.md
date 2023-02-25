@@ -13,6 +13,7 @@ My precious.
 - Run `:PackerInstall`
 - npm install -g livedown
 - ln -s $HOME/.local/share/nvim/site/pack/packer/start/vipe $HOME/bin
+- rm -rf ~/.local/share/nvim
 
 #### Solargraph
 
