@@ -170,8 +170,8 @@
 
 # Linux end here.
 
-  - name: install tree-sitter-cli
-    command: npm install -g tree-sitter-cli
+#  - name: install tree-sitter-cli
+#    command: npm install -g tree-sitter-cli
 
   - name: configures gpg and pinentry
     command: echo "pinentry-program $(brew --prefix)/bin/pinentry-mac" | tee ~/.gnupg/gpg-agent.conf
