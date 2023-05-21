@@ -14,6 +14,8 @@
 
   - file: path=~/bin state=directory mode=0755
   - file: path=~/.oh-my-zsh/themes state=directory mode=0755
+  - file: path=~/.oh-my-zsh/themes/lib state=directory mode=0755
+  - file: path=~/.config/zsh-theme state=directory mode=0755
   - file: path=~/.vsnip state=directory mode=0755
   - file: path=~/.gnupg state=directory mode=0700
 
@@ -169,9 +171,6 @@
 
 # Linux end here.
 
-#  - name: install tree-sitter-cli
-#    command: npm install -g tree-sitter-cli
-
   - name: configures gpg and pinentry
     command: echo "pinentry-program $(brew --prefix)/bin/pinentry-mac" | tee ~/.gnupg/gpg-agent.conf
 
@@ -187,8 +186,14 @@
     git:
       repo: https://github.com/albertoleal/nvim
       dest: ~/.config/nvim
-
   - file: path=~/.config/nvim/lua/user state=directory mode=0755
+
+  - name: install dracula theme
+    git:
+      repo: https://github.com/dracula/zsh.git
+      dest: ~/.config/zsh-theme
+
+
   - name: symlinks
     file:
       path: "{{item.target}}"
@@ -199,6 +204,8 @@
     - {target: ~/.zshrc, src: "{{ansible_env.PWD}}/config/zsh/zshrc"}
     - {target: ~/.zlogin, src: "{{ansible_env.PWD}}/config/zsh/zlogin"}
     - {target: ~/.oh-my-zsh/themes/pairing.zsh-theme, src: "{{ansible_env.PWD}}/config/zsh/pairing.zsh-theme"}
+    - {target: ~/.oh-my-zsh/themes/dracula.zsh-theme, src: "~/.config/zsh-theme/dracula.zsh-theme"}
+    - {target: ~/.oh-my-zsh/themes/lib/async.zsh, src: "~/.config/zsh-theme/lib/async.zsh"}
     - {target: ~/.rubocop.yml, src: "{{ansible_env.PWD}}/config/ruby/rubocop.yml"}
     - {target: ~/.ruby-version, src: "{{ansible_env.PWD}}/config/ruby/ruby-version"}
     - {target: ~/.pryrc, src: "{{ansible_env.PWD}}/config/ruby/pryrc"}
