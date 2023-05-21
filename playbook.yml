@@ -58,6 +58,7 @@
       install_options: "{{item.install_options}}"
       state: latest
     with_items:
+    - {name: asdf, install_options: ''}
     - {name: bat, install_options: ''}
     - {name: ctags, install_options: ''}
     - {name: diff-so-fancy, install_options: ''}
