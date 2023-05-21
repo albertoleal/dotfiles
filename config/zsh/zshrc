@@ -23,7 +23,7 @@ source $ZSH/oh-my-zsh.sh
 # User configuration
 export EDITOR=nvim
 
-export PATH=/opt/homebrew/bin/:/usr/local/share/chruby:$HOME/bin:/usr/local/bin:$PATH
+export PATH=/opt/homebrew/bin/:$HOME/bin:/usr/local/bin:$PATH
 export GOPATH=$HOME/workspace
 export PATH=$GOPATH/bin:$PATH
 
@@ -49,6 +49,3 @@ if [ -e /Users/aleal/.nix-profile/etc/profile.d/nix.sh ]; then . /Users/aleal/.n
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-[ -f /opt/homebrew/opt/chruby/share/chruby/chruby.sh ] && source /opt/homebrew/opt/chruby/share/chruby/chruby.sh
-[ -f /opt/homebrew/opt/chruby/share/chruby/auto.sh ] && source /opt/homebrew/opt/chruby/share/chruby/auto.sh

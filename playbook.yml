@@ -60,7 +60,6 @@
     with_items:
     - {name: bat, install_options: ''}
     - {name: ctags, install_options: ''}
-    - {name: chruby, install_options: ''}
     - {name: diff-so-fancy, install_options: ''}
     - {name: direnv, install_options: ''}
     - {name: fasd, install_options: ''}
@@ -86,7 +85,6 @@
     - {name: pinentry-mac, install_options: ''}
     - {name: pstree, install_options: ''}
     - {name: ripgrep, install_options: ''}
-    - {name: ruby-install, install_options: ''}
     - {name: shellcheck, install_options: ''}
     - {name: the_silver_searcher, install_options: ''}
     - {name: tig, install_options: ''}
