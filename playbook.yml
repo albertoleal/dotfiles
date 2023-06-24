@@ -26,6 +26,13 @@
       force: no
       mode: 0755
 
+  - name: copy gitconfig file
+    copy:
+      src: "{{ansible_env.PWD}}/config/gitconfig"
+      dest: ~/.gitconfig
+      force: yes
+      mode: 0755
+
  # Mac OS from here..
   - name: update brew
     when: ansible_os_family == "Darwin"
@@ -210,7 +217,6 @@
     - {target: ~/.pryrc, src: "{{ansible_env.PWD}}/config/ruby/pryrc"}
     - {target: ~/.ansible.cfg, src: "{{ansible_env.PWD}}/config/ansible.cfg"}
     - {target: ~/.aliases, src: "{{ansible_env.PWD}}/config/zsh/aliases"}
-    - {target: ~/.gitconfig, src: "{{ansible_env.PWD}}/config/gitconfig"}
     - {target: ~/.irbrc, src: "{{ansible_env.PWD}}/config/irbrc"}
     - {target: ~/.config/nvim/lua/user/before.lua, src: "{{ansible_env.PWD}}/config/nvim/before.lua"}
     - {target: ~/.config/nvim/lua/user/plugins.lua, src: "{{ansible_env.PWD}}/config/nvim/plugins.lua"}
