@@ -1,9 +1,9 @@
 [init]
-    templatedir = /Users/aleal/.git-template
+  templatedir = ~/.git-template
 
 [include]
-    path = /Users/aleal/.work.gitconfig
-    path = /Users/aleal/.personal.gitconfig
+  path = ~/.work.gitconfig
+  path = ~/.personal.gitconfig
 
 [core]
   editor = "nvim"
