@@ -1,7 +1,7 @@
 local cmd = vim.cmd
 
 -- " Commands
-cmd([[colorscheme dracula]])
+-- cmd([[colorscheme dracula]])
 
 -- " Remove trailing spaces on save
 cmd([[autocmd BufWritePre * :%s/\s\+$//e]])
