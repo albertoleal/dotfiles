@@ -68,8 +68,11 @@
     - {name: awscli, install_options: ''}
     - {name: bat, install_options: ''}
     - {name: ctags, install_options: ''}
+    - {name: colima, install_options: ''}
     - {name: diff-so-fancy, install_options: ''}
     - {name: direnv, install_options: ''}
+    - {name: docker, install_options: ''}
+    - {name: docker-compose, install_options: ''}
     - {name: fasd, install_options: ''}
     - {name: fd, install_options: ''}
     - {name: fzf, install_options: ''}
