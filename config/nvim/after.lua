@@ -15,6 +15,7 @@ cmd(':command! Qall qall')
 cmd(':command! W w')
 cmd(':command! Q q')
 
+cmd[[colorscheme dracula]]
 
 -- " Mappings
 -- " Search under word
