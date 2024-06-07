@@ -96,6 +96,7 @@
     - {name: pcre, install_options: ''}
     - {name: pinentry-mac, install_options: ''}
     - {name: pstree, install_options: ''}
+    - {name: redis, install_options: ''}
     - {name: ripgrep, install_options: ''}
     - {name: shellcheck, install_options: ''}
     - {name: the_silver_searcher, install_options: ''}
