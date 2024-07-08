@@ -108,6 +108,7 @@
     - {name: wget, install_options: ''}
     - {name: yarn, install_options: ''}
     - {name: yq, install_options: ''}
+    - {name: 1password-cli, install_options: ''}
 
 
 # Mac OS end here.
