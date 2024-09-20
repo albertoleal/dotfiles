@@ -83,3 +83,6 @@ ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg[blue]%})"
 
 PROMPT="$(prompt_git_name) %(?:%{$fg_bold[green]%}➜:%{$fg_bold[red]%}➜ )"
 PROMPT+=' %{$fg[cyan]%}%c%{$reset_color%} $(git_prompt_info)'
+
+# Created by `pipx` on 2024-09-20 18:53:20
+export PATH="$PATH:/Users/alberto.leal/.local/bin"

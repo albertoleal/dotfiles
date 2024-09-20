@@ -24,5 +24,6 @@
   "go.goplsPath": "gopls",
   "go.goplsArgs": [
     "-remote=auto"
-  ]
+  ],
+  "snippets.ultisnips.pythonPrompt": false
 }

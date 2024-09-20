@@ -94,6 +94,7 @@
     - {name: node, install_options: ''}
     - {name: openssl, install_options: ''}
     - {name: pcre, install_options: ''}
+    - {name: pipx, install_options: ''}
     - {name: pinentry-mac, install_options: ''}
     - {name: pstree, install_options: ''}
     - {name: redis, install_options: ''}
@@ -158,6 +159,7 @@
     - neovim
     - nodejs
     - npm
+    - pipx
     - python3-apt
     - python3-pip
     - python3-pycurl
@@ -191,7 +193,7 @@
       dest: ~/.tmux/plugins/tpm
 
   - name: install support for nvim
-    command: pip3 install --user --upgrade pynvim
+    command: pip3 install --user --upgrade pynvim --break-system-packages
 
   - name: install nvim distribution
     git:
