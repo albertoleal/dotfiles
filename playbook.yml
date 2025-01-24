@@ -42,7 +42,6 @@
     when: ansible_os_family == "Darwin"
     homebrew_tap: name={{item}}
     with_items:
-    - homebrew/cask-fonts
     - git-duet/tap
 
   - name: install Homebrew casks
@@ -54,8 +53,6 @@
     - font-meslo-lg-nerd-font
     - google-cloud-sdk
     - ngrok
-    - rectangle
-    - visual-studio-code
 
   - name: install Homebrew packages
     when: ansible_os_family == "Darwin"
@@ -73,7 +70,6 @@
     - {name: direnv, install_options: ''}
     - {name: docker, install_options: ''}
     - {name: docker-compose, install_options: ''}
-    - {name: fasd, install_options: ''}
     - {name: fd, install_options: ''}
     - {name: fzf, install_options: ''}
     - {name: gcc, install_options: ''}
@@ -184,16 +180,10 @@
 
 # Linux end here.
 
-  - name: configures gpg and pinentry
-    command: echo "pinentry-program $(brew --prefix)/bin/pinentry-mac" | tee ~/.gnupg/gpg-agent.conf
-
   - name: get Tmux Plugin Manager
     git:
       repo: https://github.com/tmux-plugins/tpm
       dest: ~/.tmux/plugins/tpm
-
-  - name: install support for nvim
-    command: pip3 install --user --upgrade pynvim --break-system-packages
 
   - name: install nvim distribution
     git:
