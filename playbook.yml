@@ -146,11 +146,6 @@
     apt:
       deb: "https://github.com/sharkdp/bat/releases/download/v0.18.3/bat_0.18.3_amd64.deb"
 
-  - name: update timezone
-    when: ansible_os_family == "Debian"
-    become: true
-    command: timedatectl set-timezone America/Sao_Paulo
-
 # Linux end here.
 
   - name: get Tmux Plugin Manager
