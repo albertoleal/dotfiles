@@ -52,8 +52,6 @@ export NVM_DIR="$HOME/.nvm"
 export PATH="/opt/homebrew/opt/openjdk@17/bin:$PATH"
 
 export TESTCONTAINERS_DOCKER_SOCKET_OVERRIDE=/var/run/docker.sock
-export TESTCONTAINERS_HOST_OVERRIDE=$(colima ls -j | jq -r '.address')
-export DOCKER_HOST="unix://${HOME}/.colima/default/docker.sock"
 export TESTCONTAINERS_RYUK_DISABLED=true
 export PATH="/opt/homebrew/opt/mysql-client/bin:$PATH"
 
