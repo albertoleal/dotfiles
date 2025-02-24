@@ -119,12 +119,6 @@
       codename: focal
       repo: 'ppa:aos1/diff-so-fancy'
 
-  - name: neovim-package
-    when: ansible_os_family == "Debian"
-    become: yes
-    ansible.builtin.apt_repository:
-      repo: 'ppa:neovim-ppa/unstable'
-
   - name: update apt cache
     when: ansible_os_family == "Debian"
     become: yes
@@ -152,7 +146,6 @@
     - jq
     - libexpat1-dev
     - libssl-dev
-    - neovim
     - nodejs
     - npm
     - pipx
