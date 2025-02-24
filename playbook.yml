@@ -119,11 +119,6 @@
       codename: focal
       repo: 'ppa:aos1/diff-so-fancy'
 
-  - name: update apt cache
-    when: ansible_os_family == "Debian"
-    become: yes
-    apt: update-cache=yes
-
   - name: install base dependencies
     when: ansible_os_family == "Debian"
     become: yes
